@@ -63,23 +63,48 @@ end
 
 ---Runs on session load
 function SP_OnSessionLoaded()
-    -- Persistent variables are only available after SessionLoaded is triggered!
-    _D(PersistentVars)
+    -- Mod variables are only available after SessionLoaded is triggered!
+    local modVars = Ext.Vars.GetModVariables(ModuleUUID)
+    if modVars.ModVoreData == nil then
+        modVars.ModVoreData = {}
+    end
+    -- One-time migration from the deprecated PersistentVars mechanism (BG3SE may remove it at any time).
+    -- PersistentVars is only populated in savegames created before this migration.
+    if modVars.ModVoreDataMigrated ~= true and type(PersistentVars) == "table" and type(PersistentVars['VoreData']) == "table"
+        and next(PersistentVars['VoreData']) ~= nil then
+        local migrated = {}
+        local migratedCount = 0
+        for k, v in pairs(PersistentVars['VoreData']) do
+            migrated[k] = v
+            migratedCount = migratedCount + 1
+        end
+        -- direct write through the proxy marks the variable as dirty
+        modVars.ModVoreData = migrated
+        _P("Migrated " .. migratedCount .. " VoreData entries from PersistentVars to ModVariables.")
+        Ext.Vars.SyncModVariables(ModuleUUID)
+    end
+    modVars.ModVoreDataMigrated = true
+    VoreData = modVars.ModVoreData
     -- SP_ResetConfig()
     SP_ResetRaceWeightsConfig()
     --SP_LoadConfigFromFile()
     SP_LoadRaceWeightsConfigFromFile()
     SP_LoadRaceBellyConfigFromFile()
-    if PersistentVars['VoreData'] == nil then
-        PersistentVars['VoreData'] = {}
-    end
-    VoreData = PersistentVars['VoreData']
-    SP_MigratePersistentVars()
-    
+    SP_MigrateVoreData()
+
 end
+
+local voreDataSyncTicks = 0
 
 function SP_Tick()
     SP_BellyQueueUpdate()
+    -- Writing to subproperties of a mod variable table does not mark it as dirty for savegame
+    -- persistence, so periodically re-assign the variable (see BG3SE docs on synchronization).
+    voreDataSyncTicks = voreDataSyncTicks + 1
+    if voreDataSyncTicks >= 300 then
+        voreDataSyncTicks = 0
+        Ext.Vars.GetModVariables(ModuleUUID).ModVoreData = VoreData
+    end
 end
 
 Ext.Events.BeforeDealDamage:Subscribe(spHandleBeforeDealDamage)

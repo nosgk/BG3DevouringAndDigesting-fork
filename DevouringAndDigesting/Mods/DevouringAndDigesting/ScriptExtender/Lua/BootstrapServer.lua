@@ -18,7 +18,7 @@ Ext.Require("IO/Output.lua")
 -- migration of config
 Ext.Require("Migrations/ConfigMigrations.lua")
 -- migration of VoreData
-Ext.Require("Migrations/PersistentVarsMigrations.lua")
+Ext.Require("Migrations/VoreDataMigrations.lua")
 
 -- subclasses
 Ext.Require("Subclasses/StomachSentinel.lua")
@@ -54,10 +54,11 @@ if not Ext.Mod.IsModLoaded(deps.MCMModuleUUID) then
 end
 
 
+-- VoreData is persisted through this mod variable (the deprecated PersistentVars
+-- global table is no longer populated; see ExtEvents.SP_OnSessionLoaded for migration).
 Ext.Vars.RegisterModVariable(ModuleUUID, "ModVoreData", {})
-
-
-PersistentVars = {}
+-- Marks that the one-time PersistentVars -> ModVariables migration has been performed.
+Ext.Vars.RegisterModVariable(ModuleUUID, "ModVoreDataMigrated", {})
 
 -- If you know where to get type hints for this, please let me know.
 if Ext.Osiris == nil then

@@ -69,7 +69,7 @@ function SP_ResetVore()
         end
         SP_DelayCallTicks(30, function()
             VoreData = {}
-            PersistentVars['VoreData'] = {}
+            Ext.Vars.GetModVariables(ModuleUUID).ModVoreData = VoreData
             SP_MCMSet("ResetVore", "Ready")
             _P("Vore reset complete")
         end)
@@ -78,12 +78,8 @@ end
 
 -- deletes every vore-related variable and possibly fixed broken saves
 function SP_KillVore()
-    PersistentVars['PreyTablePred'] = nil
-    PersistentVars['PreyWeightTable'] = nil
-    PersistentVars['FakePreyWeightTable'] = nil
-    PersistentVars['DisableDownedPreyTable'] = nil
     VoreData = {}
-    PersistentVars['VoreData'] = {}
+    Ext.Vars.GetModVariables(ModuleUUID).ModVoreData = VoreData
 end
 
 -- gives player debug items

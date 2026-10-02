@@ -1,6 +1,6 @@
 ---resets missing values in VoreData to default value from VoreDataEntry
 ---not usable for something more complex
-function SP_MigratePersistentVars()
+function SP_MigrateVoreData()
     for k, v in pairs(VoreData) do
         for i, j in pairs(VoreDataEntry) do
             if v[i] == nil then
