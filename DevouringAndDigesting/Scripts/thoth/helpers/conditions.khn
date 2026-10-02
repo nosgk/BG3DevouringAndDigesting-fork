@@ -45,30 +45,52 @@ function SP_CanVore()
 end
 
 function SwallowCheck(lethal)
-    local pred = context.Source
-    local prey = context.Target
     local lethal = lethal or false
-    -- when used in conditions, bools must be turned into ConditionResults
-    local willing = (Ally() & ~ConditionResult(lethal)) | (Party(pred) & Party(prey)) | Item()
-    if not willing.Result then
+    try
+        local pred = context.Source
+        local prey = context.Target
+        -- when used in conditions, bools must be turned into ConditionResults
+        -- Dead() is a defensive guard: dead targets are already filtered out by SP_CanVore()
+        local willing = Dead() | (Ally() & ~ConditionResult(lethal)) | (Party(pred) & Party(prey)) | Item()
+        if not willing.Result then
 
-        local adv = IsSneakingOrInvisible() | HasPassive('SP_StretchyMaw', pred) | HasStatus('SP_RavenousStatus', pred) | HasStatus('SP_Tasty', prey) | IsCrowdControlled(prey)
-        local disadv = HasEvasion() | HasStatus('SP_Disgusting', prey) | SP_IsActivePred(prey)
+            local adv = IsSneakingOrInvisible() | HasPassive('SP_StretchyMaw', pred) | HasStatus('SP_RavenousStatus', pred) | HasStatus('SP_Tasty', prey) | IsCrowdControlled(prey)
+            -- the game's HasEvasion() always evaluates on context.Source, so the Evasion passive is
+            -- checked on the prey directly here
+            local disadv = HasPassive('Evasion', prey) | HasStatus('SP_Disgusting', prey) | SP_IsActivePred(prey)
 
-        local preySkill = math.max(prey.GetPassiveSkill(Skill.Athletics),prey.GetPassiveSkill(Skill.Acrobatics))
+            local preyAthletics = prey.GetPassiveSkill(Skill.Athletics)
+            local preyAcrobatics = prey.GetPassiveSkill(Skill.Acrobatics)
+            if preyAthletics == nil then preyAthletics = 0 end
+            if preyAcrobatics == nil then preyAcrobatics = 0 end
+            local preySkill = math.max(preyAthletics, preyAcrobatics)
 
-        local predSkill = Skill.Athletics
-        if pred.GetPassiveSkill(Skill.Acrobatics) > pred.GetPassiveSkill(predSkill) then
-            predSkill = Skill.Acrobatics
+            local predSkill = Skill.Athletics
+            local predAthletics = pred.GetPassiveSkill(Skill.Athletics)
+            local predAcrobatics = pred.GetPassiveSkill(Skill.Acrobatics)
+            if predAthletics == nil then predAthletics = 0 end
+            if predAcrobatics == nil then predAcrobatics = 0 end
+            if predAcrobatics > predAthletics then
+                predSkill = Skill.Acrobatics
+            end
+            local predIntimidation = pred.GetPassiveSkill(Skill.Intimidation)
+            local predBest = pred.GetPassiveSkill(predSkill)
+            if predIntimidation == nil then predIntimidation = 0 end
+            if predBest == nil then predBest = 0 end
+            if HasPassive('SP_SC_GreatHunger', pred).Result and predIntimidation > predBest then
+                predSkill = Skill.Intimidation
+            end
+
+            local skillCheck = SkillCheck(predSkill, preySkill, adv, disadv)
+            return ConditionResult(skillCheck.Result,{},{},skillCheck.Chance)
         end
-        if HasPassive('SP_SC_GreatHunger', pred).Result and pred.GetPassiveSkill(Skill.Intimidation) > pred.GetPassiveSkill(predSkill) then
-            predSkill = Skill.Intimidation
-        end
-
-        local skillCheck = SkillCheck(predSkill, preySkill, adv, disadv)
+        return willing
+    catch e then
+        -- If the check fails to evaluate (e.g. an entity without skill data), fall back to a plain
+        -- Athletics check against DC 10 instead of silently consuming the action without a roll.
+        local skillCheck = SkillCheck(Skill.Athletics, 10)
         return ConditionResult(skillCheck.Result,{},{},skillCheck.Chance)
     end
-    return willing
 end
 
 -- unused?
