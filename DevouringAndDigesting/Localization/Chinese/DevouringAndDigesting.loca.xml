@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentList>
+	<!-- 吞噬与消化 - 简体中文本地化（MCM 菜单与设置项）。覆盖英文条目；仅游戏语言为 Chinese 时加载。 -->
+	<content contentuid="h086643dege15eg42acga7c3gc0f596312163" version="1">吞噬与消化</content>
+	<content contentuid="h03bb0f22g509cg5ff6g9cf2g6cfd4588d311" version="1">新手必读</content>
+	<content contentuid="h2d57225eg5b0cg472egbfb4g86d1aec272a6" version="1">添加吞噬道具</content>
+	<content contentuid="h77a11429g3848g41begbd34ga70d5dc329b7" version="1">为当前操控的角色添加开启吞噬功能的道具</content>
+	<content contentuid="hdb479814ga809g5ff9g863egabbe032ec3a2" version="1">消化</content>
+	<content contentuid="h5b11190eg5c18g4f4fga8e6gc0bf880a2a5b" version="1">滚烫肠胃：快速消化</content>
+	<content contentuid="hba334da7g6555g44a1g8488g4c4c19c6a257" version="1">拥有“滚烫肠胃”专长时，死亡猎物的消化速度加倍。</content>
+	<content contentuid="h47e5139dg2c0eg4a11gb897g49de94713aec" version="1">消化速率（长休）</content>
+	<content contentuid="h90c50245gd9cbg4884gb0b7g33c2090b736a" version="1">决定长休后，正在被消化的猎物重量减少多少。</content>
+	<content contentuid="he9fa6ba6g508bg428fg8552g88604ab116cb" version="1">消化速率（短休）</content>
+	<content contentuid="h05fc6aaag37abg4d99g95d7g2a76005c852c" version="1">决定每次短休后，正在被消化的猎物重量减少多少。</content>
+	<content contentuid="h03cf3df0g2ce4g449eg99e0g8afc51f217e7" version="1">渐进消化量</content>
+	<content contentuid="hca25a119gfd5bg4c75g9738g24b3cdac5f01" version="1">每 X 回合被动消化死亡猎物此重量（X 由“渐进消化回合数”设定）。设为 0 禁用。</content>
+	<content contentuid="h3c7c39d4gebdeg44d9g8307gae14cfb4dcf6" version="1">渐进消化回合数</content>
+	<content contentuid="h67ce705egae25g4835g8517gf802ab78df4d" version="1">被动消化的触发间隔。1 回合 = 现实时间 6 秒。设为 0 禁用。</content>
+	<content contentuid="h28d75044g9810g476egad69g5765d4664965" version="1">即时消化</content>
+	<content contentuid="he064dd60g18f4g45e6ga6edg27180c74d21b" version="1">启用后，猎物消化完成时重量立即减少，且可立刻吸收或处理猎物。</content>
+	<content contentuid="h6f8a2d1eg3b7cg4e5fg9a1dg2c4b8e6f0a3" version="1">消化伤害转生命比率</content>
+	<content contentuid="h3e1d9c7bg5a2fg48e6gb4d0g7f3a1c5e8b2" version="1">调整捕食者从消化中恢复的生命值。影响“滋养消化”与“酸性汲取”的治疗效果。100% 时每回合正常治疗；50% 时约隔一回合治疗一次；200% 时每回合治疗两次。设为 0 禁用所有消化治疗。</content>
+	<content contentuid="h5df3a493gc914g53cdg98eeg555175fd5c90" version="1">饥饿系统</content>
+	<content contentuid="hb280ef2fg894cg4c0ag8c3ega0f971190cb7" version="1">启用饥饿</content>
+	<content contentuid="h1560bc4dge61eg48d8gb6d2g72e1a9071ccd" version="1">为队伍成员捕食者启用饥饿系统。捕食者长时间不消化猎物将受到减益。&#10;设为 false 则完全禁用饥饿。</content>
+	<content contentuid="h8debec48gb238g4038ga5f0gbd7ff8adf4a5" version="1">饥饿阈值</content>
+	<content contentuid="h3e516fddg31fbg402eg96dfg237da0a9d1d7" version="1">饥饿层数达到此值时，角色开始感到饥饿。</content>
+	<content contentuid="hb027ab1eg6caag4013g8986gf2218f2fb6af" version="1">极度饥饿阈值</content>
+	<content contentuid="haa98c284g829ag4f92ga8b8gd8d28c98324b" version="1">饥饿层数达到此值时，角色进入“极度饥饿”状态。</content>
+	<content contentuid="h012c79fegfac8g48f3gad3bg3a76ff0a1cfc" version="1">濒死饥饿阈值</content>
+	<content contentuid="h5521379eg7001g4aefg88d6g4dd14824e9a1" version="1">饥饿层数达到此值时，角色进入“濒死饥饿”状态。</content>
+	<content contentuid="hd7caf1a1g8674g43dbg9db2g12deabad071c" version="1">饥饿层数增量（长休）</content>
+	<content contentuid="hbe94120fg0e47g44fag9caagbe81d13a54d9" version="1">每次长休增加的饥饿层数。</content>
+	<content contentuid="h82452982g391cg4ab7ga57egcd7a5ad2a4fc" version="1">饱食度需求</content>
+	<content contentuid="hc03c838fgc6bag47abg8258gdc445c97c66f" version="1">降低 1 层饥饿所需的饱食度。数值越大，缓解饥饿所需的猎物越多。</content>
+	<content contentuid="h1926ab47gf338g421bg887cg342fa00e833f" version="1">消化效率</content>
+	<content contentuid="h488fd883g0dcdg4a28g928dg41eec5a4178a" version="1">消化时获得的饱食度。此数值为猎物重量的百分比。</content>
+	<content contentuid="h4460f58agbdc9g477cg97f7g8fdb2b754f1f" version="1">饥饿层数增量（短休）</content>
+	<content contentuid="h9be661c7gb95bg4046gbfe3g579efc013310" version="1">每次短休增加的饥饿层数。</content>
+	<content contentuid="h50902d93g3f0fg480bgb5e5ge4b8077bcdc5" version="1">意外消化</content>
+	<content contentuid="h5e453492ga977g4b8egb5c5g22895f120164" version="1">启用后，随着饥饿加深，将越来越有可能意外开始消化以温和方式吞下的猎物。&#10;独立于“致命转温和”选项生效。</content>
+	<content contentuid="ha4f65dacg7420g5e67g92b5gaef5dbfbc01f" version="1">机制</content>
+	<content contentuid="hbeabe152ga9d7g48c1g8736g343cfb2164c7" version="1">允许超量吞食（未完成）</content>
+	<content contentuid="he5ac7fa6g289ag43f9g8a89g39c277a2812c" version="1">启用后，吞食猎物可以超过最大负重上限，但每回合会按超量程度受到伤害。&#10;禁用时，吞食数量将受到负重上限的硬性限制。</content>
+	<content contentuid="hf1fa5b9bgc83cg40ffgaa48g18d3198ed59b" version="1">专长解锁部位</content>
+	<content contentuid="h015aca58ge9feg46c9ga7deg182c8885d211" version="1">启用后，特定专长将解锁新的吞噬部位；否则只能通过药水解锁。</content>
+	<content contentuid="h747ae843gf476g447aga39cg229c3de07161" version="1">需要相应身体结构</content>
+	<content contentuid="h935d0d56g7debg47cegba7ag98fe77333d9e" version="1">启用后，特殊类型的吞噬需要拥有对应的身体部位。</content>
+	<content contentuid="hb8a11fbcg8ce1g4856ga547g038979cc80da" version="1">致命转温和</content>
+	<content contentuid="he62c0918g047fg4d7fg9ccfge7b7656e08ff" version="1">可以通过“致命切换”法术或温和吞下另一名猎物来停止消化。&#10;禁用时，仅当该部位没有正在被消化的猎物时才能切回温和。</content>
+	<content contentuid="hde03a225g09ebg4749gaa0eg509acd6082cf" version="1">缓慢吞咽</content>
+	<content contentuid="h7a0e88c1g4314g4f87gbaa2gab231efbb0fa" version="1">成功“吞下”一个生物需要消耗 2 个动作点而非 1 个。（未完成）</content>
+	<content contentuid="h34a6f020g6a5fg4f2eg983cg86e336abd8cb" version="1">猎物脱离实体</content>
+	<content contentuid="h39861453ge5e1g4665g979bg35af956bcba6" version="1">猎物被吞下后将脱离世界网格：不受范围效果和地表影响，但无法施放呼喝类法术。</content>
+	<content contentuid="hd004e205g720dg460dg911fgd262cd5d5e87" version="1">消化不良上限</content>
+	<content contentuid="h1d381716g4c41g4fc5gad56g28e45eeb4a26" version="1">“消化不良”叠加至该层数时，捕食者将被强制吐出全部猎物。设为 0 禁用。</content>
+	<content contentuid="he41dfd12g8e58g4915gbfd5g594d1b8e4600" version="1">力竭上限</content>
+	<content contentuid="hcfaec850g3b7eg4b4aga071g1e116fb3a09a" version="1">“力竭”叠加至该层数时，猎物将停止挣扎。设为 0 禁用。（未完成）</content>
+	<content contentuid="h1b5a5fa4gd545g492dgbc41g01d8c1f0a510" version="1">消化不良仅在休息时移除</content>
+	<content contentuid="h9e1b8567gc49fg4d74g9ddcg5b67bdbf5def" version="1">“消化不良”不再随体内没有存活猎物而移除，而是仅在长休时移除。&#10;建议搭配较高的消化不良上限使用。</content>
+	<content contentuid="hcd1aedafge550g5e0eg9aadg1a36c1e7186e" version="1">NPC设置</content>
+	<content contentuid="hf9c75c3cg600bg4834ga69eg39a9838dd47e" version="1">中型生物捕食者概率上限</content>
+	<content contentuid="h5785dea9gae39g460cgba01g8255d30917f8" version="1">限制中型生物成为捕食者的概率。设为 100 或更高则不限制。</content>
+	<content contentuid="he9dfb140g2201g4789ga320gdbe35d1f1a6b" version="1">小型生物捕食者概率上限</content>
+	<content contentuid="h2338ef8eg8885g4806g82feg9c8f96e9085f" version="1">限制小型生物成为捕食者的概率。设为 100 或更高则不限制。</content>
+	<content contentuid="hfd75f002gc099g4285g9a4eg8cff95b6273e" version="1">微型生物捕食者概率上限</content>
+	<content contentuid="h7f85ac39g2602g4358g8165g2857d46d2b61" version="1">限制微型生物成为捕食者的概率。设为 100 或更高则不限制。</content>
+	<content contentuid="hc44900a9g3ae9g48d0g966fgae51e4c537cc" version="1">吞咽冷却上限</content>
+	<content contentuid="hae7b8cbcge3b0g44efgac03g4bad2a2b367c" version="1">NPC 吞噬尝试之间的最大冷却时间（回合）。</content>
+	<content contentuid="he16a7bdbg32eag4977g927dg2d3620ed89c9" version="1">吞咽冷却下限</content>
+	<content contentuid="h18487894gb4f5g4005g9144gb2e77d58726a" version="1">NPC 吞噬尝试之间的最小冷却时间（回合）。</content>
+	<content contentuid="hec1267e9g154cg45e4g972eg79b78a38dbf4" version="1">怪物捕食者概率</content>
+	<content contentuid="h60d7ed3cg3a98g41b9g85a3gfd1ae128b3dd" version="1">怪物成为捕食者的百分比。怪物指内部判定既非男性也非女性的生物。&#10;该值会乘以种族系数。设为 0 禁用。</content>
+	<content contentuid="h73799bdcg6d9fg4da2g83dag6c5a748b59be" version="1">女性NPC捕食者概率</content>
+	<content contentuid="h857ad935g7f15g436ega4fcg1335fbd93806" version="1">女性 NPC 成为捕食者的百分比。女性 NPC 指体型 1 或 3 的角色（有例外）。&#10;该值会乘以种族系数。设为 0 禁用。</content>
+	<content contentuid="h71a055f0g9447g416egb521g1dd3a397ef27" version="1">男性NPC捕食者概率</content>
+	<content contentuid="h54c897b7ga067g4717g958egb55a0804e1bc" version="1">男性 NPC 成为捕食者的百分比。男性 NPC 指体型 2 或 4 的角色（有例外）。&#10;该值会乘以种族系数。设为 0 禁用。</content>
+	<content contentuid="h5a878b66gc82fg4c79g9064gdf3176208d82" version="1">重置种族配置</content>
+	<content contentuid="h9e0550cdga785g4cd9g8e87g07e78f2b5a1c" version="1">RaceConfig.json 位于 AppData\Local\Larian Studios\Baldur’s Gate 3\Script Extender。&#10;该配置存储每个种族 NPC 成为捕食者的百分比。&#10;最终概率 = 种族概率 × 性别概率 ÷ 100。&#10;此选项将所有种族的概率重置为 100。</content>
+	<content contentuid="h612aa133gf015g4c9ag95a9gc8ace4fe0abd" version="1">加载示例种族配置</content>
+	<content contentuid="h52e1510ag70bbg4db9g8e63g9b4f1db47d79" version="1">加载一份示例种族配置。&#10;适合不想手动调整概率或需要起点的玩家。&#10;注意：这会覆盖现有的 RaceConfig.json，请先备份！</content>
+	<content contentuid="hb9b179f0g7802g48e8ga5fbgaaacc6de0ead" version="1">重新加载种族配置</content>
+	<content contentuid="h52efe3aag2823g4049ga2d1g86af3ebea842" version="1">从已保存的 RaceConfig.json 重新读取配置（如果存在）。&#10;通常读取存档时会自动加载，此选项用于手动重载。</content>
+	<content contentuid="h362cd427g99e5g5324g8035gf519d74deaf9" version="1">吐出</content>
+	<content contentuid="hec67bdf7g4bd1g47c8ga30cg19b7ae6c1a53" version="1">吐出冷却</content>
+	<content contentuid="h05bcbbb8ga6e5g4479g8f95gcb027de5f69f" version="1">捕食者吐出猎物后，一段时间内无法再次吐出。设为 0 禁用。&#10;如果觉得反复吞下/吐出队友有滥用机制之嫌，这是一个权宜方案。&#10;也可以改用“吐出饥饿”。</content>
+	<content contentuid="h86a0d83fg21b6g4909g874dg053a3ffc5ad5" version="1">吞咽冷却</content>
+	<content contentuid="h392ef870g8004g4bbbg9700g65f74dae984d" version="1">捕食者吐出猎物后，一段时间内无法再次吞咽。设为 0 禁用。</content>
+	<content contentuid="h7273ac52g2029g4101gafebg2dc9b965de42" version="1">吐出距离</content>
+	<content contentuid="h591a955cg086cg4adagb605gf83f903b4b6c" version="1">决定猎物被吐出时落点的距离。</content>
+	<content contentuid="h714ac4ee038849879c63c77ebf917647g998" version="1">吐出饥饿</content>
+	<content contentuid="h10546701610241dba903b71fd0a99593ce43" version="1">启用饥饿系统且此值大于 0 时，每吐出一名存活猎物将获得相应层数的饥饿。是“吐出冷却”的替代方案。</content>
+	<content contentuid="h573916edg082ag5cb8g83deg33cf1aa1380c" version="1">视觉与音效</content>
+	<content contentuid="ha71aee9cg765bg4807ga244g872fbf7fc9af" version="1">腹部尺寸</content>
+	<content contentuid="hc84055f8gde26g4d53g89c4g75094a9b2676" version="1">放大或缩小所有腹部。默认为 100%。</content>
+	<content contentuid="hcad8f987g535fg4731g8c3eg5664db059e0a" version="1">刷新腹部外观</content>
+	<content contentuid="h4f5a07e3g6138g414cgbb96g58eb4dd58098" version="1">立即刷新腹部外观。</content>
+	<content contentuid="hf873f4afg2471g50e8gb7afg01433c798777" version="1">就绪</content>
+	<content contentuid="hd5a8ecfag290bg5a01g9783gf9fe8678906a" version="1">刷新中</content>
+	<content contentuid="hc42a1cc4g0f53g4c6ag8039g588c4746ca5f" version="1">腹鸣概率</content>
+	<content contentuid="h4e78058fge597g4483g8df2g659cf3bd9292" version="1">每 6 秒（1 回合）播放腹鸣音效的概率。设为 0 禁用。</content>
+	<content contentuid="he87e3e39189a45de82db37295afb6361e9ac" version="1">重新加载腹部配置</content>
+	<content contentuid="h43863a6bcac843bea9d9600884f817539b63" version="1">从已保存的 CustomRacesBellies.json 重新读取自定义种族的腹部配置（如果存在）。&#10;通常读取存档时会自动加载，此选项用于手动重载。</content>
+	<content contentuid="h4b16541bg719dg583ag8926g7a401fcf8150" version="1">调试</content>
+	<content contentuid="h4e097d7dg8b92g4eecg943fg8f3c446cd600" version="1">启用调试选项</content>
+	<content contentuid="hfd9bc4f7g3ccfg4796g9ab8g64f6d13a3323" version="1">显示调试选项。除非你清楚自己在做什么，否则不要勾选。</content>
+	<content contentuid="h46b445c0g1fefg40d1g9c23ge1a8200dae0b" version="1">重置吞噬</content>
+	<content contentuid="hf3a71a05g88ddg4421g8073g6cda3448cb81" version="1">勾选以重置吞噬系统：所有捕食者将吐出全部猎物，存储的数据将被清除。再次点击前请等待其恢复就绪。&#10;如果 2-3 秒后没有恢复为“就绪”，请查看控制台错误信息。</content>
+	<content contentuid="h1091cca6gf0cbg5f36g8c83gba73791ec30f" version="1">就绪</content>
+	<content contentuid="ha13240ecg5cb1g5aadga7e2g2434672533b7" version="1">运行中</content>
+	<content contentuid="h745793d1g7f99g4804g94a5gdd74ac9ac521" version="1">吞噬必定成功</content>
+	<content contentuid="h2b249bc4ga705g4840gb05cg310b44df81ab" version="1">启用后，所有吞噬尝试都将成功。</content>
+	<content contentuid="h645b9269gaa12g4bf4gbbb8g04eab5c9c136" version="1">锁定胃囊物品</content>
+	<content contentuid="h2bf4a4dagd687g464cgb42egbabd60be450e" version="1">锁定物品吞噬时用于存放物品的“胃囊物品”。</content>
+	<content contentuid="h205b370eg1392g40fcgab84g2501c25e0db4" version="1">传送猎物</content>
+	<content contentuid="h86904d99ga5f0g4b70ga5cfg3cd261ab58b1" version="1">决定存活猎物是否在每回合结束时（回合制外为每 6 秒）传送到捕食者身边。默认开启，仅在遇到性能问题时应关闭。</content>
+	<content contentuid="hc8573aecg2080g4d0fg8984gfbd149465242" version="1">打印吞噬数据</content>
+	<content contentuid="h8c0409a6gc089g4119gb8deg3af749cfeff2" version="1">将吞噬数据输出到控制台。</content>
+	<content contentuid="h666ba5b8gcf4bg5586g9997g3ee8b0c03329" version="1">实验性功能</content>
+	<content contentuid="h9eac08bdg65f6g4ae2gadd1g2c47fd0e58e8" version="1">显示实验性功能</content>
+	<content contentuid="h94c92f7dg0ff8g40bcgbccdg4f86f145797d" version="1">显示包含未完成选项的标签页。大部分功能可以正常使用，但风险自负。</content>
+	<content contentuid="h5787b11cg360bg473bgaf67gf6e41341add5" version="1">物品吞噬</content>
+	<content contentuid="h5a54e380g9a35g40a7g9e7egdf5a98a4f4e9" version="1">允许吞下物品。物品将被存入背包中一个上锁的容器内。&#10;当胃部开始消化猎物时，物品也可能被消化。被消化的物品将永久丢失！</content>
+	<content contentuid="h043674ecg0be8g4582g88f7g18ba9a6627cf" version="1">物品消化</content>
+	<content contentuid="hc80f837cgf6cdg48f5gaf21gee0e67ec64b9" version="1">开始消化猎物时，胃中的物品也可能被消化。&#10;警告：这会删除你胃中的剧情物品，可能导致存档卡死！</content>
+	<content contentuid="hd7b51e95g542cg40e7g8cf6ga7739b886692" version="1">增重</content>
+	<content contentuid="hd1c26779gd970g48e8g8dcbg6229e59484f2" version="1">存储并增加腹部尺寸的脂肪值。脂肪在消化死亡猎物时增加，休息时减少。&#10;注意：此选项只影响腹部尺寸。</content>
+	<content contentuid="hae74d1c9gab55g4ad8gb8b4g0f18ca560044" version="1">增重比率</content>
+	<content contentuid="h2348a7cbgcd3fg4e69gb873g798b1b0c735e" version="1">猎物重量转化为脂肪的百分比。</content>
+	<content contentuid="h5298a431g000eg48e4ga220g3da30fe806dc" version="1">减重量（长休）</content>
+	<content contentuid="h8bbd0039g0c93g474bgbe50gad1ddfb3c329" version="1">角色每次长休减少的脂肪量。</content>
+	<content contentuid="h2196f661g6f44g413cg8fecgb83d624bcc00" version="1">减重量（短休）</content>
+	<content contentuid="he7bb71c7ga7d3g49fdg9d99g534730bad26a" version="1">角色每次短休减少的脂肪量。</content>
+	<content contentuid="hcff67f30g9871g4a18gaf42g484271860bf0" version="1">饥饿消耗脂肪</content>
+	<content contentuid="h85831c78g7af6g4cdag892dgb2aa0a3d043e" version="1">启用后，当饱食度不足时，将消耗脂肪使饥饿增量减半。</content>
+	<content contentuid="h0dd6fcf5g1916g48ffgb251gb48092202e11" version="1">汗湿吞噬</content>
+	<content contentuid="h0e61b45fgcabag4adfg8fc2ge5ec8b8b2a2d" version="1">吞下猎物后，捕食者会出汗数回合。</content>
+	<content contentuid="h4366abfdg8f26g46a9g8e8bgcccc68986bc1" version="1">获得加成的部位</content>
+	<content contentuid="hd8575a61gb3d3g4b2ega6c0g074fe462aec6" version="1">这些部位的猎物将获得专长加成（例如在该部位内可以施法）。</content>
+	<content contentuid="h7095c674g7f1ag5077ga075g296cc2267bbc" version="1">全部部位</content>
+	<content contentuid="h9eda4d42g1448g5ce8g8597gc5a60bfe35e6" version="1">仅胃部</content>
+	<content contentuid="h436ca029gb166g5d54g8eabg6fc2136ccdc0" version="1">阅读确认</content>
+	<content contentuid="h1e4391c8g9959g4131ga9ebg2f3d1c8dbee1" version="1">我已阅读维基</content>
+	<content contentuid="hf9263e2eg3a7cg4686g928ag4c52b7483eb8" version="1">勾选即表示你已阅读维基上的全部相关说明信息。</content>
+</contentList>

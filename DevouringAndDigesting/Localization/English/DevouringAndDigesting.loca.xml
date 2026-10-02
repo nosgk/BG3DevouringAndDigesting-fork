@@ -726,4 +726,22 @@
     <content contentuid="h39b3be56481041ceb550362ae42cc3e9dg3c" version="1">Move Prey (Bowels to Stomach)</content>
     <content contentuid="hf47e6963a43c440eb5a1e83d2c80af293bfd" version="1">Potion of Rest</content>
     <content contentuid="h32127c41138d493dab4a3dc437512905ac77" version="1">Use this to start a Long Rest while a player character is devoured. A confirmation window will appear on screen. You must click 'yes' within a couple of seconds, or the potion will not work.</content>
+
+	<!-- MCM tab names and choice labels (localization handles) -->
+	<content contentuid="h03bb0f22g509cg5ff6g9cf2g6cfd4588d311" version="1">Start Here</content>
+	<content contentuid="hdb479814ga809g5ff9g863egabbe032ec3a2" version="1">Digestion</content>
+	<content contentuid="h5df3a493gc914g53cdg98eeg555175fd5c90" version="1">Hunger System</content>
+	<content contentuid="ha4f65dacg7420g5e67g92b5gaef5dbfbc01f" version="1">Mechanics</content>
+	<content contentuid="hcd1aedafge550g5e0eg9aadg1a36c1e7186e" version="1">NPCs</content>
+	<content contentuid="h362cd427g99e5g5324g8035gf519d74deaf9" version="1">Regurgitation</content>
+	<content contentuid="h573916edg082ag5cb8g83deg33cf1aa1380c" version="1">Visuals and Audio</content>
+	<content contentuid="hf873f4afg2471g50e8gb7afg01433c798777" version="1">Ready</content>
+	<content contentuid="hd5a8ecfag290bg5a01g9783gf9fe8678906a" version="1">Updating</content>
+	<content contentuid="h4b16541bg719dg583ag8926g7a401fcf8150" version="1">Debug</content>
+	<content contentuid="h1091cca6gf0cbg5f36g8c83gba73791ec30f" version="1">Ready</content>
+	<content contentuid="ha13240ecg5cb1g5aadga7e2g2434672533b7" version="1">Running</content>
+	<content contentuid="h666ba5b8gcf4bg5586g9997g3ee8b0c03329" version="1">WIP</content>
+	<content contentuid="h7095c674g7f1ag5077ga075g296cc2267bbc" version="1">All</content>
+	<content contentuid="h9eda4d42g1448g5ce8g8597gc5a60bfe35e6" version="1">Stomach</content>
+	<content contentuid="h436ca029gb166g5d54g8eabg6fc2136ccdc0" version="1">Reading Check</content>
 </contentList>
