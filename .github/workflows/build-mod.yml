@@ -1,0 +1,58 @@
+name: Build Mod
+
+# Builds the mod into a .pak (zip-wrapped for BG3 Mod Manager import).
+# Pushes to main produce a build artifact; version tags additionally create a GitHub release.
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  # Keep this in sync with InstallTools.bat
+  LSLIB_VERSION: v1.18.7
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download lslib ExportTool (divine)
+        run: |
+          $url = "https://github.com/Norbyte/lslib/releases/download/$env:LSLIB_VERSION/ExportTool-$env:LSLIB_VERSION.zip"
+          Invoke-WebRequest -Uri $url -OutFile ExportTool.zip
+          Expand-Archive -Path ExportTool.zip -DestinationPath Tools
+          $divine = Resolve-Path "Tools/ExportTool-*/Tools/divine.exe"
+          "DIVINE=$divine" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Build mod
+        run: ./Scripts/build-mod.ps1 -DivinePath $env:DIVINE
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DevouringAndDigesting
+          path: |
+            build/DevouringAndDigesting.zip
+            build/DevouringAndDigesting.pak
+          if-no-files-found: error
+
+      - name: Create GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/DevouringAndDigesting.zip

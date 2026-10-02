@@ -1,3 +1,19 @@
+Dragonborn belly VisualBank entries (DGB_F/M_NKD_Body_A_Mesh) now set NeedsSkeletonRemap=True so the engine remaps the
+	old baked bone bindings against the current (Patch 8 reworked) DGB_F_Base skeleton by bone name - data-only fix attempt for issue #40;
+	the definitive fix is re-exporting the belly GR2s against the current skeleton (Blender/remeshed.blend + Blender/main.py pipeline).
+Added GitHub Actions build (build-mod.yml + Scripts/build-mod.ps1): converts loca.xml/lsf.lsx with lslib divine and packs the mod
+	into DevouringAndDigesting.pak wrapped in a zip for BG3 Mod Manager import; verified locally.
+
+VoreData is now persisted via ModVariables (ModVoreData) instead of the deprecated BG3SE PersistentVars table (issue #46).
+	A one-time migration runs on session load for savegames created before this change; the deprecation warning on BG3SE v31+ should be gone.
+	VoreData mutations are re-dirtied for savegame persistence on a periodic tick (subproperty writes do not mark ModVars dirty).
+SwallowCheck (Scripts/thoth/helpers/conditions.khn) is wrapped in try/catch with a plain Athletics-DC10 fallback roll, so a failing
+	evaluation no longer consumes the action without a roll (issue #42). Prey Evasion is now checked on the prey instead of the predator,
+	GetPassiveSkill results are nil-guarded, and Dead() was added to the willing check (matching the game's ShoveCheck).
+Added a Simplified Chinese localization overlay (Localization/Chinese) covering the whole MCM blueprint: tab names, all setting
+	names/descriptions, radio choice labels, and the mod display name. MCM_blueprint.json tabs now carry NameHandles and the three
+	radio settings carry ChoicesHandles (values are unchanged, only labels are localized).
+
 added asserts on the type of VoreData to appease the linter
 added different vore loci; "O" == Oral, "A" == Anal, and "U" == Unbirth; this is stored in VoreData as the value of VoreData[character].Prey, which was previously unused.
 	VoreData[character].Digestion is now a table with keys "O", "A", and "U", and the value of each is the digestion state of each locus.
