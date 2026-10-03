@@ -1,3 +1,9 @@
+Fixed drinking a vore potion not unlocking the swallow spells: the character is now tagged as a
+	predator (SP_IsPred) BEFORE the locus passive is added, and the SP_CanXxxVore passives unlock their
+	spells unconditionally instead of under IF(Tagged('PREDATOR',context.Source)) - the spell unlock no
+	longer depends on tag evaluation order or context semantics. SP_OnItemUsed logs every step ([SP]
+	prefix) so failures are traceable in the Script Extender console.
+
 Second attempt at the empty 'Bag of Vore Potions' fix: TemplateAddTo is asynchronous, so the bag
 	is only looked up after a few ticks and the eight potions are added into it directly (the previous
 	GenerateTreasure call silently did nothing because the bag lookup ran before the item existed).

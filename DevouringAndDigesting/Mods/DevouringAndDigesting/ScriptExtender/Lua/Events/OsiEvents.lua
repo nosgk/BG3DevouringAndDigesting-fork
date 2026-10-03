@@ -541,23 +541,40 @@ function SP_OnItemUsed(character, item, success)
         local template = Osi.GetTemplate(item)
         -- check if a character lost a locus, to see if they are still a pred
         local changedLoci = 0
-        _P(template)
+        _P("[SP] Item used: " .. template)
+        -- tag the character as a predator BEFORE the locus passive is added: the
+        -- SP_CanXxxVore passives unlock the swallow spells, and if they are evaluated
+        -- before SP_IsPred exists the spellbook stays empty until the passive is re-added
+        if template == 'SP_PotionOfOralVore_1219e0c2-e893-4de0-8a92-6212d1348223'
+            or template == 'SP_PotionOfAnalVore_04987160-cb88-4d3e-b219-1843e5253d51'
+            or template == 'SP_PotionOfUnbirth_92067c3c-547e-4451-9377-632391702de9'
+            or template == 'SP_PotionOfCockVore_04cbdeb4-a98e-44cd-b032-972df0ba3ca1' then
+            if Osi.HasPassive(character, "SP_IsPred") == 0 then
+                Osi.RemovePassive(character, "SP_NotPred")
+                Osi.AddPassive(character, "SP_IsPred")
+                _P("[SP] Added SP_IsPred to " .. character)
+            end
+        end
         -- item name + map key
         if template == 'SP_PotionOfOralVore_1219e0c2-e893-4de0-8a92-6212d1348223' then
             if Osi.HasPassive(character, "SP_CanOralVore") == 0 then
                 Osi.AddPassive(character, "SP_CanOralVore")
                 changedLoci = 1
+                _P("[SP] Added SP_CanOralVore to " .. character)
             else
                 Osi.RemovePassive(character, "SP_CanOralVore")
                 changedLoci = -1
+                _P("[SP] Removed SP_CanOralVore from " .. character)
             end
         elseif template == 'SP_PotionOfAnalVore_04987160-cb88-4d3e-b219-1843e5253d51' then
             if Osi.HasPassive(character, "SP_CanAnalVore") == 0 then
                 Osi.AddPassive(character, "SP_CanAnalVore")
                 changedLoci = 1
+                _P("[SP] Added SP_CanAnalVore to " .. character)
             else
                 Osi.RemovePassive(character, "SP_CanAnalVore")
                 changedLoci = -1
+                _P("[SP] Removed SP_CanAnalVore from " .. character)
             end
         elseif template == 'SP_PotionOfUnbirth_92067c3c-547e-4451-9377-632391702de9' then
             if Osi.HasPassive(character, "SP_CanUnbirth") == 0 and (Osi.IsTagged(character, 'a0738fdf-ca0c-446f-a11d-6211ecac3291') == 1 or not
@@ -623,12 +640,19 @@ function SP_OnItemUsed(character, item, success)
         -- if no loci left, remove pred status
         SP_DelayCallTicks(2, function ()
             if changedLoci < 0 and SP_GetPredLoci(character) == "" then
-                
+
                 Osi.RemovePassive(character, "SP_IsPred")
                 Osi.AddPassive(character, "SP_NotPred")
             elseif changedLoci > 0 and Osi.HasPassive(character, "SP_IsPred") == 0 then
                 Osi.RemovePassive(character, "SP_NotPred")
                 Osi.AddPassive(character, "SP_IsPred")
+            end
+            if changedLoci ~= 0 then
+                _P("[SP] " .. character .. " passives: IsPred=" .. Osi.HasPassive(character, "SP_IsPred")
+                    .. " CanOral=" .. Osi.HasPassive(character, "SP_CanOralVore")
+                    .. " CanAnal=" .. Osi.HasPassive(character, "SP_CanAnalVore")
+                    .. " CanUnbirth=" .. Osi.HasPassive(character, "SP_CanUnbirth")
+                    .. " CanCock=" .. Osi.HasPassive(character, "SP_CanCockVore"))
             end
         end)
     end
