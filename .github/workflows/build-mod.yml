@@ -46,9 +46,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DevouringAndDigesting
-          path: |
-            build/DevouringAndDigesting.zip
-            build/DevouringAndDigesting.pak
+          path: build/DevouringAndDigesting.pak
           if-no-files-found: error
 
       - name: Create GitHub release

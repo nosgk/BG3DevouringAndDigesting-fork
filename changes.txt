@@ -1,3 +1,10 @@
+Full Simplified Chinese localization of the mod's loca (539/539 entries: items, potions, spells,
+	statuses, feats, subclasses, tooltips and popups) - previously only the MCM menu was translated.
+Fixed the 'Bag of Vore Potions' spawning empty: the bag's root-template InventoryList does not
+	generate its treasure table, so SP_GiveVoreItems now calls Osi.GenerateTreasure explicitly.
+CI artifact now contains only DevouringAndDigesting.pak (the zip-wrapped copy remains the release
+	asset format for v* tags).
+
 Dragonborn belly VisualBank entries (DGB_F/M_NKD_Body_A_Mesh) now set NeedsSkeletonRemap=True so the engine remaps the
 	old baked bone bindings against the current (Patch 8 reworked) DGB_F_Base skeleton by bone name - data-only fix attempt for issue #40;
 	the definitive fix is re-exporting the belly GR2s against the current skeleton (Blender/remeshed.blend + Blender/main.py pipeline).
