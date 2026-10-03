@@ -1,3 +1,17 @@
+Four follow-up fixes after stats started loading (all verified in field logs):
+- Vore potions bag no longer double-fills: with stats loading, the bag template's own treasure
+	table generates its contents, so the manual potion adds from the previous fix were removed.
+- Dragonborn bellies: a CustomRacesBellies.json entry overriding the built-in Dragonborn race with
+	nonexistent belly sets (Dragonborn3/Dragonborn4) aborted the visual update. SP_UpdateBelly now
+	validates each candidate config and falls back to the built-in belly table when the referenced
+	set doesn't exist.
+- AddPassiveSafe false alarms removed: Osi.HasPassive does not reflect a passive on the tick it is
+	added - verification is delayed by 3 ticks, and the broken PassiveContainer fallback (v32 rejects
+	stats objects in that array) was removed since Osi.AddPassive works.
+- The SP_CanXxxVore passives now also unlock the container child spells (Swallow Endo/Lethal
+	variants) alongside the container itself, and drinking a potion logs the character's SP_ spellbook
+	contents for diagnosing spell unlock issues.
+
 ROOT CAUSE of the missing passives/spells found via Ext.Stats.Get diagnostics: the game's stats
 	scanner does not recurse into subdirectories under Stats/Generated/Data/ - the mod kept its stats
 	in Data/Items, Data/Passive, Data/Spells, Data/Status, Data/Subclasses (a recent upstream refactor),

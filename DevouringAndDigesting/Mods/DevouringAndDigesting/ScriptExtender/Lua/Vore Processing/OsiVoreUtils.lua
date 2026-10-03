@@ -24,41 +24,41 @@ function SP_UpdateBelly(pred, weight)
         predRace = RaceAliases[predRace]
     end
 
-    local raceSettings
-    if CustomRacesBellies[predRace] ~= nil then
-        raceSettings = CustomRacesBellies[predRace]
-    elseif BellyTable[predRace] ~= nil then
-        raceSettings = BellyTable[predRace]
-    else
-        _P("Race " .. predRace .. " does not support bellies")
-        return
-    end
-
     local sex = Osi.GetBodyType(pred, 1)
-    -- Only female belly is currently implemented.
-    if raceSettings.Sexes == false then
-        sex = "Sex"
-    end
-    if raceSettings[sex] == nil then
-        _P("Sex " .. sex .. " does not support bellies")
-        return
-    end
+    local raceSettings = nil
     local bodyShape = "Default"
-    if raceSettings[sex].BodyShapes then
-        local tags = Ext.Entity.Get(pred).Tag.Tags
-        for _, v in pairs(tags) do
-            if v == "d3116e58-c55a-4853-a700-bee996207397" then
-                bodyShape = "Strong"
+    -- try the custom race config first, then the built-in table; a candidate is only
+    -- valid if the referenced belly set actually exists (user configs can point at
+    -- sets that don't exist, e.g. Dragonborn4), otherwise the next candidate is used
+    local candidates = {}
+    if CustomRacesBellies[predRace] ~= nil then
+        table.insert(candidates, CustomRacesBellies[predRace])
+    end
+    if BellyTable[predRace] ~= nil then
+        table.insert(candidates, BellyTable[predRace])
+    end
+    for _, candidate in ipairs(candidates) do
+        -- configs with Sexes == false keep their entries under the "Sex" key
+        local sexEntry = candidate.Sexes == false and candidate.Sex or candidate[sex]
+        if sexEntry ~= nil then
+            local shape = "Default"
+            if sexEntry.BodyShapes then
+                local tags = Ext.Entity.Get(pred).Tag.Tags
+                for _, v in pairs(tags) do
+                    if v == "d3116e58-c55a-4853-a700-bee996207397" then
+                        shape = "Strong"
+                    end
+                end
+            end
+            if sexEntry[shape] ~= nil and BellySets[sexEntry[shape]] ~= nil then
+                raceSettings = candidate
+                bodyShape = shape
+                break
             end
         end
     end
-    if raceSettings[sex][bodyShape] == nil then
-        _P("Body shape " .. bodyShape .. " does not support bellies")
-        return
-    end
-
-    if BellySets[raceSettings[sex][bodyShape]] == nil then
-        _P("Race " .. predRace .. " uses bad belly set " .. raceSettings[sex][bodyShape])
+    if raceSettings == nil then
+        _P("Race " .. predRace .. " does not support bellies (no valid belly set for sex " .. sex .. ")")
         return
     end
     -- fixes most npcs not having a field that stores visual overrides

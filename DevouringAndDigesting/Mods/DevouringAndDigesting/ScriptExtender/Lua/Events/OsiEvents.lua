@@ -660,6 +660,26 @@ function SP_OnItemUsed(character, item, success)
                     .. " CanAnal=" .. flag("SP_CanAnalVore")
                     .. " CanUnbirth=" .. flag("SP_CanUnbirth")
                     .. " CanCock=" .. flag("SP_CanCockVore"))
+                -- diagnostics: which of the mod's spells are actually in the spellbook?
+                SP_DelayCallTicks(5, function ()
+                    local ok, names = pcall(function ()
+                        local out = {}
+                        local book = Ext.Entity.Get(character).SpellBook
+                        for _, entry in ipairs(book.Spells) do
+                            local proto = entry.SpellId.Prototype
+                            if type(proto) == "string" and string.sub(proto, 1, 3) == "SP_" then
+                                table.insert(out, proto)
+                            end
+                        end
+                        table.sort(out)
+                        return out
+                    end)
+                    if ok then
+                        _P("[SP] " .. character .. " spellbook: " .. (next(names) ~= nil and table.concat(names, ", ") or "(no SP_ spells)"))
+                    else
+                        _P("[SP] SpellBook read failed: " .. tostring(names))
+                    end
+                end)
             end
         end)
     end

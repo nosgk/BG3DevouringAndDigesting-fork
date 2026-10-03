@@ -117,82 +117,39 @@ function SP_HasPassiveSafe(character, passiveName)
     return false
 end
 
----Adds a passive with several fallbacks: Osi.AddPassive may silently do nothing
----when the passive stats are missing or when the entity can't be resolved from
----the Osiris Name_UUID string on some game/SE versions.
+---Adds a passive via Osi.AddPassive. Verification is delayed because Osi.HasPassive
+---does not reflect a passive on the same tick it was added.
 ---@param character CHARACTER
 ---@param passiveName string
----@return boolean whether the passive is present on the character afterwards
+---@return boolean whether the call was made without error
 function SP_AddPassiveSafe(character, passiveName)
     if SP_HasPassiveSafe(character, passiveName) then
         return true
     end
-    -- diagnose: is the passive defined in the loaded stats?
-    -- (Ext.Stats.Get takes a single stat-name string; there is no (type, name) overload)
-    local stat
-    local okStat, statErr = pcall(function () stat = Ext.Stats.Get(passiveName) end)
-    if not okStat then
-        _F("[SP] Ext.Stats.Get errored for " .. passiveName .. ": " .. tostring(statErr))
-    elseif stat == nil then
-        _F("[SP] Passive not found in loaded stats (stats file failed to load?): " .. passiveName)
-    end
-    -- attempt 1: Osiris call (must run even if the stats diagnosis above failed)
     local ok, err = pcall(function () Osi.AddPassive(character, passiveName) end)
     if not ok then
         _F("[SP] Osi.AddPassive errored for " .. passiveName .. ": " .. tostring(err))
+        return false
     end
-    if SP_HasPassiveSafe(character, passiveName) then
-        return true
-    end
-    -- fallback 1: resolve the entity via the bare UUID part of the Osiris name
-    local bareUuid = string.sub(character, -36)
-    pcall(function () Osi.AddPassive(bareUuid, passiveName) end)
-    if SP_HasPassiveSafe(character, passiveName) then
-        _P("[SP] " .. passiveName .. " added via bare UUID")
-        return true
-    end
-    -- fallback 2: write into the entity's PassiveContainer directly
-    local ok3, err3 = pcall(function ()
-        local entity = Ext.Entity.Get(bareUuid)
-        local passives = entity.PassiveContainer.Passives
-        passives[#passives + 1] = stat
-        entity.PassiveContainer.Passives = passives
-        entity:Replicate("PassiveContainer")
+    -- delayed verification: the passive is not queryable on the same tick
+    SP_DelayCallTicks(3, function ()
+        _P("[SP] AddPassiveSafe(" .. passiveName .. ") verified: "
+            .. tostring(SP_HasPassiveSafe(character, passiveName)))
     end)
-    if not ok3 then
-        _F("[SP] PassiveContainer fallback failed for " .. passiveName .. ": " .. tostring(err3))
-    end
-    local present = SP_HasPassiveSafe(character, passiveName)
-    _P("[SP] AddPassiveSafe(" .. passiveName .. ") -> " .. tostring(present))
-    return present
+    return true
 end
 
----Removes a passive with the same fallbacks as SP_AddPassiveSafe.
+---Removes a passive via Osi.RemovePassive with delayed verification.
 ---@param character CHARACTER
 ---@param passiveName string
 function SP_RemovePassiveSafe(character, passiveName)
     local ok, err = pcall(function () Osi.RemovePassive(character, passiveName) end)
     if not ok then
         _F("[SP] Osi.RemovePassive errored for " .. passiveName .. ": " .. tostring(err))
-    end
-    if not SP_HasPassiveSafe(character, passiveName) then
         return
     end
-    local bareUuid = string.sub(character, -36)
-    pcall(function () Osi.RemovePassive(bareUuid, passiveName) end)
-    if not SP_HasPassiveSafe(character, passiveName) then
-        return
-    end
-    pcall(function ()
-        local entity = Ext.Entity.Get(bareUuid)
-        local passives = entity.PassiveContainer.Passives
-        for i, p in ipairs(passives) do
-            if p == passiveName or p.Name == passiveName then
-                table.remove(passives, i)
-                break
-            end
-        end
-        entity.PassiveContainer.Passives = passives
-        entity:Replicate("PassiveContainer")
+    SP_DelayCallTicks(3, function ()
+        _P("[SP] RemovePassiveSafe(" .. passiveName .. ") verified removed: "
+            .. tostring(not SP_HasPassiveSafe(character, passiveName)))
     end)
 end
