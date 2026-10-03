@@ -1,3 +1,9 @@
+Fixed SP_AddPassiveSafe itself aborting the potion handler: Ext.Stats.Get has no (type, name)
+	two-string overload in SE v32 (argument #2 must be a number), so the diagnostic call threw and
+	killed the whole SP_OnItemUsed handler before Osi.AddPassive ever ran. The stats lookup now uses
+	the single stat-name form, is pcall-wrapped, and never prevents the Osi/UUID/PassiveContainer
+	attempts below it from running.
+
 Passive handling reworked after console logs showed Osi.AddPassive executing without errors
 	but the passives never appearing (HasPassive=0 two ticks later). New helpers in OsiUtils.lua:
 	SP_HasPassiveSafe (cross-checks the entity's PassiveContainer), SP_AddPassiveSafe (stats-existence

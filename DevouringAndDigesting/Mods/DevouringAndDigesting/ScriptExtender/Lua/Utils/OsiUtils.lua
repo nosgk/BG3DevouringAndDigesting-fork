@@ -127,12 +127,16 @@ function SP_AddPassiveSafe(character, passiveName)
     if SP_HasPassiveSafe(character, passiveName) then
         return true
     end
-    -- diagnose: is the passive even defined in the loaded stats?
-    local stat = Ext.Stats.Get("PassiveData", passiveName)
-    if stat == nil then
+    -- diagnose: is the passive defined in the loaded stats?
+    -- (Ext.Stats.Get takes a single stat-name string; there is no (type, name) overload)
+    local stat
+    local okStat, statErr = pcall(function () stat = Ext.Stats.Get(passiveName) end)
+    if not okStat then
+        _F("[SP] Ext.Stats.Get errored for " .. passiveName .. ": " .. tostring(statErr))
+    elseif stat == nil then
         _F("[SP] Passive not found in loaded stats (stats file failed to load?): " .. passiveName)
-        return false
     end
+    -- attempt 1: Osiris call (must run even if the stats diagnosis above failed)
     local ok, err = pcall(function () Osi.AddPassive(character, passiveName) end)
     if not ok then
         _F("[SP] Osi.AddPassive errored for " .. passiveName .. ": " .. tostring(err))
