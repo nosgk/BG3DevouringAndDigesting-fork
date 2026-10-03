@@ -92,6 +92,14 @@ function SP_OnSessionLoaded()
     SP_LoadRaceBellyConfigFromFile()
     SP_MigrateVoreData()
 
+    -- one-time diagnostics: are the mod's key stats actually loaded?
+    SP_DelayCallTicks(10, function ()
+        for _, statName in ipairs({ "SP_IsPred", "SP_CanOralVore", "SP_PotionOfOralVore",
+            "SP_Stuffed", "SP_Target_Swallow_O", "SP_Target_Swallow_Lethal_O" }) do
+            _P("[SP] stat " .. statName .. " loaded: " .. tostring(Ext.Stats.Get(statName) ~= nil))
+        end
+    end)
+
 end
 
 local voreDataSyncTicks = 0

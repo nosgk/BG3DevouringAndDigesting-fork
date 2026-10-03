@@ -1,3 +1,10 @@
+ROOT CAUSE of the missing passives/spells found via Ext.Stats.Get diagnostics: the game's stats
+	scanner does not recurse into subdirectories under Stats/Generated/Data/ - the mod kept its stats
+	in Data/Items, Data/Passive, Data/Spells, Data/Status, Data/Subclasses (a recent upstream refactor),
+	so NONE of them were ever loaded (verified against the game's own paks and 18 working mods, which
+	all keep stats flat in Data/). The build now flattens Data/**/*.txt into Data/ at package time.
+	Session load now also logs whether the key stats are present for quick verification.
+
 Fixed SP_AddPassiveSafe itself aborting the potion handler: Ext.Stats.Get has no (type, name)
 	two-string overload in SE v32 (argument #2 must be a number), so the diagnostic call threw and
 	killed the whole SP_OnItemUsed handler before Osi.AddPassive ever ran. The stats lookup now uses

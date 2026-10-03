@@ -81,6 +81,27 @@ if ($lsfSources) {
     Remove-Item -Recurse -Force $tmpDir
 }
 
+# --- flatten stats subdirectories ---------------------------------------------
+# The game's stats scanner does not recurse into subdirectories under
+# Stats/Generated/Data/ (the game itself and all working mods keep stats files
+# flat in Data/), so files in Data/Items/, Data/Passive/, Data/Spells/, etc.
+# would never load. Flatten them into Data/ at package time.
+Write-Host "== Flattening stats files into Data/"
+$statsDataDir = Join-Path $StagingDir "Public\DevouringAndDigesting\Stats\Generated\Data"
+Get-ChildItem -Path $statsDataDir -Recurse -Filter "*.txt" | Where-Object { $_.DirectoryName -ne $statsDataDir } | ForEach-Object {
+    if ($_.Length -eq 0) {
+        Write-Host "   removing empty file: $($_.Name)"
+        Remove-Item -Force $_.FullName
+        return
+    }
+    $dest = Join-Path $statsDataDir $_.Name
+    if (Test-Path $dest) {
+        throw "Stats file name collision while flattening: $($_.Name)"
+    }
+    Move-Item -Force $_.FullName $dest
+    Write-Host "   $($_.FullName.Substring($statsDataDir.Length + 1)) -> $($_.Name)"
+}
+
 # --- pack --------------------------------------------------------------------
 Write-Host "== Creating pak"
 $PakPath = Join-Path $OutputDir "DevouringAndDigesting.pak"
