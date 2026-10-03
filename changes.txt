@@ -1,3 +1,7 @@
+Second attempt at the empty 'Bag of Vore Potions' fix: TemplateAddTo is asynchronous, so the bag
+	is only looked up after a few ticks and the eight potions are added into it directly (the previous
+	GenerateTreasure call silently did nothing because the bag lookup ran before the item existed).
+
 Full Simplified Chinese localization of the mod's loca (539/539 entries: items, potions, spells,
 	statuses, feats, subclasses, tooltips and popups) - previously only the MCM menu was translated.
 Fixed the 'Bag of Vore Potions' spawning empty: the bag's root-template InventoryList does not
