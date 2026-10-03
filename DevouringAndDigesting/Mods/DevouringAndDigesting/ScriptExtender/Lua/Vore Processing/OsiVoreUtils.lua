@@ -248,7 +248,7 @@ function SP_GetPredLoci(pred, forRegurgitate)
     end
     local loci = ''
     local skipA = false
-    if Osi.HasPassive(pred, "SP_CanOralVore") == 1 then
+    if SP_HasPassiveSafe(pred, "SP_CanOralVore") then
         if forRegurgitate then
             loci = loci .. 'OA'
             skipA = true
@@ -256,13 +256,13 @@ function SP_GetPredLoci(pred, forRegurgitate)
             loci = loci .. 'O'
         end
     end
-    if not skipA and Osi.HasPassive(pred, "SP_CanAnalVore") == 1 then
+    if not skipA and SP_HasPassiveSafe(pred, "SP_CanAnalVore") then
         loci = loci .. 'A'
     end
-    if Osi.HasPassive(pred, "SP_CanUnbirth") == 1 then
+    if SP_HasPassiveSafe(pred, "SP_CanUnbirth") then
         loci = loci .. 'U'
     end
-    if Osi.HasPassive(pred, "SP_CanCockVore") == 1 then
+    if SP_HasPassiveSafe(pred, "SP_CanCockVore") then
         loci = loci .. 'C'
     end
     _P("Pred Loci are: " .. loci)

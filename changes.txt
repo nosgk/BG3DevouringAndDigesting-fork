@@ -1,3 +1,9 @@
+Passive handling reworked after console logs showed Osi.AddPassive executing without errors
+	but the passives never appearing (HasPassive=0 two ticks later). New helpers in OsiUtils.lua:
+	SP_HasPassiveSafe (cross-checks the entity's PassiveContainer), SP_AddPassiveSafe (stats-existence
+	diagnosis, bare-UUID retry, direct PassiveContainer fallback) and SP_RemovePassiveSafe. The potion
+	path, pred status bookkeeping and SP_GetPredLoci now use them; every failure mode logs an [SP] line.
+
 Fixed drinking a vore potion not unlocking the swallow spells: the character is now tagged as a
 	predator (SP_IsPred) BEFORE the locus passive is added, and the SP_CanXxxVore passives unlock their
 	spells unconditionally instead of under IF(Tagged('PREDATOR',context.Source)) - the spell unlock no

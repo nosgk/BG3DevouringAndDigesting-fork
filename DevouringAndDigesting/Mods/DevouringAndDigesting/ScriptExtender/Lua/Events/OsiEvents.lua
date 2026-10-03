@@ -549,74 +549,78 @@ function SP_OnItemUsed(character, item, success)
             or template == 'SP_PotionOfAnalVore_04987160-cb88-4d3e-b219-1843e5253d51'
             or template == 'SP_PotionOfUnbirth_92067c3c-547e-4451-9377-632391702de9'
             or template == 'SP_PotionOfCockVore_04cbdeb4-a98e-44cd-b032-972df0ba3ca1' then
-            if Osi.HasPassive(character, "SP_IsPred") == 0 then
-                Osi.RemovePassive(character, "SP_NotPred")
-                Osi.AddPassive(character, "SP_IsPred")
+            if not SP_HasPassiveSafe(character, "SP_IsPred") then
+                SP_RemovePassiveSafe(character, "SP_NotPred")
+                SP_AddPassiveSafe(character, "SP_IsPred")
                 _P("[SP] Added SP_IsPred to " .. character)
             end
         end
         -- item name + map key
         if template == 'SP_PotionOfOralVore_1219e0c2-e893-4de0-8a92-6212d1348223' then
-            if Osi.HasPassive(character, "SP_CanOralVore") == 0 then
-                Osi.AddPassive(character, "SP_CanOralVore")
+            if not SP_HasPassiveSafe(character, "SP_CanOralVore") then
+                SP_AddPassiveSafe(character, "SP_CanOralVore")
                 changedLoci = 1
                 _P("[SP] Added SP_CanOralVore to " .. character)
             else
-                Osi.RemovePassive(character, "SP_CanOralVore")
+                SP_RemovePassiveSafe(character, "SP_CanOralVore")
                 changedLoci = -1
                 _P("[SP] Removed SP_CanOralVore from " .. character)
             end
         elseif template == 'SP_PotionOfAnalVore_04987160-cb88-4d3e-b219-1843e5253d51' then
-            if Osi.HasPassive(character, "SP_CanAnalVore") == 0 then
-                Osi.AddPassive(character, "SP_CanAnalVore")
+            if not SP_HasPassiveSafe(character, "SP_CanAnalVore") then
+                SP_AddPassiveSafe(character, "SP_CanAnalVore")
                 changedLoci = 1
                 _P("[SP] Added SP_CanAnalVore to " .. character)
             else
-                Osi.RemovePassive(character, "SP_CanAnalVore")
+                SP_RemovePassiveSafe(character, "SP_CanAnalVore")
                 changedLoci = -1
                 _P("[SP] Removed SP_CanAnalVore from " .. character)
             end
         elseif template == 'SP_PotionOfUnbirth_92067c3c-547e-4451-9377-632391702de9' then
-            if Osi.HasPassive(character, "SP_CanUnbirth") == 0 and (Osi.IsTagged(character, 'a0738fdf-ca0c-446f-a11d-6211ecac3291') == 1 or not
+            if not SP_HasPassiveSafe(character, "SP_CanUnbirth") and (Osi.IsTagged(character, 'a0738fdf-ca0c-446f-a11d-6211ecac3291') == 1 or not
                     SP_MCMGet("RequireProperAnatomy") or Osi.GetBodyType(character, 1) == "Female") then
-                Osi.AddPassive(character, "SP_CanUnbirth")
+                SP_AddPassiveSafe(character, "SP_CanUnbirth")
                 changedLoci = 1
-            elseif Osi.HasPassive(character, "SP_CanUnbirth") == 1 then
-                Osi.RemovePassive(character, "SP_CanUnbirth")
+                _P("[SP] Added SP_CanUnbirth to " .. character)
+            elseif SP_HasPassiveSafe(character, "SP_CanUnbirth") then
+                SP_RemovePassiveSafe(character, "SP_CanUnbirth")
                 changedLoci = -1
+                _P("[SP] Removed SP_CanUnbirth from " .. character)
             end
         elseif template == 'SP_PotionOfCockVore_04cbdeb4-a98e-44cd-b032-972df0ba3ca1' then
-            if Osi.HasPassive(character, "SP_CanCockVore") == 0 and (Osi.IsTagged(character, 'd27831df-2891-42e4-b615-ae555404918b') == 1 or not
+            if not SP_HasPassiveSafe(character, "SP_CanCockVore") and (Osi.IsTagged(character, 'd27831df-2891-42e4-b615-ae555404918b') == 1 or not
                     SP_MCMGet("RequireProperAnatomy")) then
-                Osi.AddPassive(character, "SP_CanCockVore")
+                SP_AddPassiveSafe(character, "SP_CanCockVore")
                 changedLoci = 1
-            elseif Osi.HasPassive(character, "SP_CanCockVore") == 1 then
-                Osi.RemovePassive(character, "SP_CanCockVore")
+                _P("[SP] Added SP_CanCockVore to " .. character)
+            elseif SP_HasPassiveSafe(character, "SP_CanCockVore") then
+                SP_RemovePassiveSafe(character, "SP_CanCockVore")
                 changedLoci = -1
+                _P("[SP] Removed SP_CanCockVore from " .. character)
             end
         elseif template == 'SP_PotionOfInedibility_319379c2-3627-4c26-b14d-3ce8abb676c3' then
-            if Osi.HasPassive(character, "SP_Inedible") == 0 then
-                Osi.AddPassive(character, "SP_Inedible")
+            if not SP_HasPassiveSafe(character, "SP_Inedible") then
+                SP_AddPassiveSafe(character, "SP_Inedible")
             else
-                Osi.RemovePassive(character, "SP_Inedible")
+                SP_RemovePassiveSafe(character, "SP_Inedible")
             end
         elseif template == 'SP_PotionOfDebugSpells_69d2df14-6d8a-4f94-92b5-cc48bc60f132' then
-            if Osi.HasPassive(character, "SP_HasDebugSpells") == 0 then
-                Osi.AddPassive(character, "SP_HasDebugSpells")
+            if not SP_HasPassiveSafe(character, "SP_HasDebugSpells") then
+                SP_AddPassiveSafe(character, "SP_HasDebugSpells")
             else
-                Osi.RemovePassive(character, "SP_HasDebugSpells")
+                SP_RemovePassiveSafe(character, "SP_HasDebugSpells")
             end
         elseif template == 'SP_PotionOfAssign_b8d700d0-681f-4c38-b444-fe69b361d9b3' then
-            if Osi.HasPassive(character, "SP_Assigner") == 0 then
-                Osi.AddPassive(character, "SP_Assigner")
+            if not SP_HasPassiveSafe(character, "SP_Assigner") then
+                SP_AddPassiveSafe(character, "SP_Assigner")
             else
-                Osi.RemovePassive(character, "SP_Assigner")
+                SP_RemovePassiveSafe(character, "SP_Assigner")
             end
         elseif template == 'SP_PotionOfPrey_02ee5321-7bcd-4712-ba06-89eb1850c2e4' then
-            if Osi.HasPassive(character, "SP_IsPrey") == 0 then
-                Osi.AddPassive(character, "SP_IsPrey")
+            if not SP_HasPassiveSafe(character, "SP_IsPrey") then
+                SP_AddPassiveSafe(character, "SP_IsPrey")
             else
-                Osi.RemovePassive(character, "SP_IsPrey")
+                SP_RemovePassiveSafe(character, "SP_IsPrey")
             end
         elseif template == 'SP_PotionOfRest_37eee091-99b3-4756-8d96-16f09dbecec9' then
                 for k, v in pairs(VoreData) do
@@ -641,18 +645,21 @@ function SP_OnItemUsed(character, item, success)
         SP_DelayCallTicks(2, function ()
             if changedLoci < 0 and SP_GetPredLoci(character) == "" then
 
-                Osi.RemovePassive(character, "SP_IsPred")
-                Osi.AddPassive(character, "SP_NotPred")
-            elseif changedLoci > 0 and Osi.HasPassive(character, "SP_IsPred") == 0 then
-                Osi.RemovePassive(character, "SP_NotPred")
-                Osi.AddPassive(character, "SP_IsPred")
+                SP_RemovePassiveSafe(character, "SP_IsPred")
+                SP_AddPassiveSafe(character, "SP_NotPred")
+            elseif changedLoci > 0 and not SP_HasPassiveSafe(character, "SP_IsPred") then
+                SP_RemovePassiveSafe(character, "SP_NotPred")
+                SP_AddPassiveSafe(character, "SP_IsPred")
             end
             if changedLoci ~= 0 then
-                _P("[SP] " .. character .. " passives: IsPred=" .. Osi.HasPassive(character, "SP_IsPred")
-                    .. " CanOral=" .. Osi.HasPassive(character, "SP_CanOralVore")
-                    .. " CanAnal=" .. Osi.HasPassive(character, "SP_CanAnalVore")
-                    .. " CanUnbirth=" .. Osi.HasPassive(character, "SP_CanUnbirth")
-                    .. " CanCock=" .. Osi.HasPassive(character, "SP_CanCockVore"))
+                local function flag(name)
+                    return SP_HasPassiveSafe(character, name) and "1" or "0"
+                end
+                _P("[SP] " .. character .. " passives: IsPred=" .. flag("SP_IsPred")
+                    .. " CanOral=" .. flag("SP_CanOralVore")
+                    .. " CanAnal=" .. flag("SP_CanAnalVore")
+                    .. " CanUnbirth=" .. flag("SP_CanUnbirth")
+                    .. " CanCock=" .. flag("SP_CanCockVore"))
             end
         end)
     end
