@@ -10,17 +10,18 @@ data "TargetRadius" "MeleeMainWeaponRange"
 // into the SP_TrySwallow_* statuses (OnApplyRoll compiles at status-apply time, not at
 // spellbook registration), mirroring the mod's own zone-swallow path. The spell itself
 // is OfferMe-shaped: no SpellRoll, SpellSuccess just applies the TrySwallow status.
-// TargetConditions use only ENGINE-BUILTIN functions - game-khn helpers like
-// CanShoveWeight() are NOT resolvable for mod spells and got the spell dropped;
-// its body (Strength*mult vs GetLiftingWeight) is inlined below. No table literals.
-data "TargetConditions" "not (HasStatus('SP_CooldownSwallow', context.Source) or HasStatus('SP_SC_BlockVoreTotal', context.Source) or HasStatus('SP_Inedible', context.Target)) and not (HasStatus('SP_InLocus_O', context.Source) or HasStatus('SP_InLocus_A', context.Source) or HasStatus('SP_InLocus_U', context.Source) or HasStatus('SP_InLocus_C', context.Source)) and (Character() and not Dead() or Item()) and IsMovable() and not Self() and (context.Source.Strength * (HasStatus('ENLARGE', context.Source) and 28.2 or (HasStatus('REDUCE', context.Source) and 5.1 or 12)) >= (GetLiftingWeight(context.Target) / 1000)) and not Grounded() and not Tagged('GASEOUS_FORM') and not Tagged('CANT_SHOVE_THROW') and not Tagged('Inedible')"
+// TargetConditions are restricted to the EXACT engine builtins proven to register
+// (identical set to SP_Target_OfferMe, which registers): even engine-side helpers
+// like GetLiftingWeight/IsMovable/Grounded were still too much in r13. The removed
+// guards (cooldown/block/weight) are enforced by the TrySwallow roll and Lua checks.
+data "TargetConditions" "Character() and not Dead() and not Self() and not Tagged('GASEOUS_FORM') and not Tagged('Inedible')"
 data "SpellSuccess" "ApplyStatus(SP_TrySwallow_Lethal_O, 100, 0)"
 data "Icon" "Action_VampireBite"
 data "PrepareSound" "Generic_GeneralAction_Start"
 data "PrepareLoopSound" "Generic_GeneralAction_Loop"
 data "CastSound" "Action_Cast_Shove"
 data "CastTextEvent" "Cast"
-data "CycleConditions" "(context.Source.Strength * (HasStatus('ENLARGE', context.Source) and 28.2 or (HasStatus('REDUCE', context.Source) and 5.1 or 12)) >= (GetLiftingWeight(context.Target) / 1000)) and not Grounded()"
+
 data "UseCosts" "ActionPoint:1"
 data "SpellAnimation" "f13da615-33ae-412e-8314-4ac4fc560dbf,,;,,;01fe9641-f630-4ed2-8035-1186dc7a5803,,;e6643712-8521-4c83-b518-1a10d61da4ef,,;f28943e2-f5e6-4133-80ef-8c7c4f628920,,;,,;,,;,,;,,"
 data "VerbalIntent" "Control"
@@ -44,7 +45,7 @@ data "DisplayName" "hf1967968gea50g42d1g9474gdce71387b2d3;1"
 data "Description" "h60376d5fg24b7g40e4gb8f4g0909a3d9b526;7"
 data "ExtraDescription" "hc4e89fa9g4eb2g4d4ag948dg3393c1a4af77;3"
 data "Icon" "Action_Monster_Cambion_DrainingKiss"
-data "CycleConditions" "(context.Source.Strength * (HasStatus('ENLARGE', context.Source) and 28.2 or (HasStatus('REDUCE', context.Source) and 5.1 or 12)) >= (GetLiftingWeight(context.Target) / 1000)) and not Grounded() and ((Character() and not Dead() and Ally()))"
+data "CycleConditions" "Character() and not Dead() and Ally()"
 data "SpellFlags" "IsSpell;IsMelee"
 data "HitAnimationType" "PhysicalDamage"
 data "SpellAnimationIntentType" "Peaceful"
@@ -59,7 +60,7 @@ data "DisplayName" "heb4ad6c5g3aa6g4735g836bg95c0c032b583;1"
 data "Description" "ha7878dd9g671ag42a6g9ca8gbbd4522b673f;7"
 data "ExtraDescription" "h0a1782aeg5b0ag4dd7g8c19g54cebae7d3a8;3"
 data "ExtraDescriptionParams" "DealDamage(LevelMapValue(Digestion) + ConstitutionModifier,Acid);"
-data "CycleConditions" "(context.Source.Strength * (HasStatus('ENLARGE', context.Source) and 28.2 or (HasStatus('REDUCE', context.Source) and 5.1 or 12)) >= (GetLiftingWeight(context.Target) / 1000)) and not Grounded() and (Character() and Enemy() and not Dead() or Item())"
+data "CycleConditions" "Character() and Enemy() and not Dead() or Item()"
 data "HitAnimationType" "PhysicalDamage"
 data "SpellAnimationIntentType" "Aggressive"
 data "SpellFlags" "IsMelee;IsHarmful"
@@ -102,7 +103,7 @@ data "DisplayName" "hf1967968gea50g42d1g9474gdce71387b2d3;1"
 data "Description" "h60376d5fg24b7g40e4gb8f4g0909a3d9b526;7"
 data "ExtraDescription" "hc4e89fa9g4eb2g4d4ag948dg3393c1a4af77;3"
 data "Icon" "Action_Monster_Cambion_DrainingKiss"
-data "CycleConditions" "(context.Source.Strength * (HasStatus('ENLARGE', context.Source) and 28.2 or (HasStatus('REDUCE', context.Source) and 5.1 or 12)) >= (GetLiftingWeight(context.Target) / 1000)) and not Grounded() and ((Character() and not Dead() and Ally()))"
+data "CycleConditions" "Character() and not Dead() and Ally()"
 data "HitAnimationType" "PhysicalDamage"
 data "SpellAnimationIntentType" "Peaceful"
 //data "SpellFlags" "Temporary;IsMelee"

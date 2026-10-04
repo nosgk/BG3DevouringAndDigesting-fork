@@ -726,3 +726,10 @@ new entry "SP_Test_D_KhnRef"
 type "SpellData"
 using "SP_Test_A_Minimal"
 data "TargetConditions" "CanShoveWeight()"
+
+// r13/r14 theory probes: E tests whether HasStatus (suspected builtin) resolves at
+// registration; D tests a game-khn helper (CanShoveWeight). A/B/C = proven baseline.
+new entry "SP_Test_E_HasStatus"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "TargetConditions" "not HasStatus('SP_Tasty', context.Target) and not Dead()"

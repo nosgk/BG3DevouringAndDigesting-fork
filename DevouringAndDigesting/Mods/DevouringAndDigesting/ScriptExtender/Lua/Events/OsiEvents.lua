@@ -637,6 +637,8 @@ function SP_OnItemUsed(character, item, success)
                 SP_RemovePassiveSafe(character, "SP_HasDebugSpells")
             end
             SP_DelayCallTicks(5, function () SP_LogSpellBookSP(character) end)
+                -- spells sometimes land in the book several ticks late; second reading
+                SP_DelayCallTicks(40, function () SP_LogSpellBookSP(character) end)
         elseif template == 'SP_PotionOfAssign_b8d700d0-681f-4c38-b444-fe69b361d9b3' then
             if not SP_HasPassiveSafe(character, "SP_Assigner") then
                 SP_AddPassiveSafe(character, "SP_Assigner")
@@ -691,6 +693,8 @@ function SP_OnItemUsed(character, item, success)
                 -- diagnostics: which of the mod's spells are actually in the spellbook?
                 -- BookComponent.Spells elements are spell::SpellData; the SpellId lives on .Id
                 SP_DelayCallTicks(5, function () SP_LogSpellBookSP(character) end)
+                -- spells sometimes land in the book several ticks late; second reading
+                SP_DelayCallTicks(40, function () SP_LogSpellBookSP(character) end)
             end
         end)
     end

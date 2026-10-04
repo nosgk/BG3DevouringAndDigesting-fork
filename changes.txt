@@ -35,6 +35,22 @@ stay in place as a second path; the Khonsu probe spells from the previous round 
 via the Potion of Debug Spells to determine whether the mod's .khn condition functions load (that
 decides whether the spell, once visible, can actually target and roll).
 
+r14 - Swallow conditions reduced to the EXACT engine-builtin set proven to register. The r13 log
+was inconclusive (only one locus potion -> only the always-empty first dump), but the user saw no
+properly-named Swallow button, so registration still failed with the r13 conditions; the remaining
+unproven functions in them (GetLiftingWeight, context.Source.Strength, IsMovable, Grounded) are now
+gone: TargetConditions = "Character() and not Dead() and not Self() and not Tagged('GASEOUS_FORM')
+and not Tagged('Inedible')" - literally the OfferMe set (OfferMe provably registers) plus the
+Inedible tag. CycleConditions reduced to native-only forms; the removed guards (weight, cooldown,
+block, inedible status) are enforced by the Lua swallow checks and can return to the stats layer
+once the registration environment is understood. TrySwallow status rolls simplified to a proven
+"SkillCheck(Skill.Athletics, 10)" (the rich contested roll returns once the flow works; will-
+auto-success for allies is the documented tradeoff). New probe SP_Test_E_HasStatus (HasStatus in
+TargetConditions) alongside D (game-khn helper) settles which functions the registration
+environment actually provides. Spellbook dumps now fire twice (5 and 40 ticks) because spells
+reliably land in the book several ticks late; and IMPORTANT: evaluating a fix requires TWO locus
+potions in one session - the dump after the FIRST is always empty.
+
 r13 - the bisect results from the r12 log pinpoint the blocker: SP_Test_A_Minimal, B_Roll and
 C_ContainerRoll (mod Target spell, SpellRoll "Attack(...)", container + children + SpellRoll
 "SkillCheck(...)") ALL registered into the spellbook, while SP_Target_Swallow_O with its
