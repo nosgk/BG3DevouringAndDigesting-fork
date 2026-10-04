@@ -34,6 +34,13 @@ function SP_IsPredOfPrey(pred, prey)
 end
 
 
+-- diagnostics probe: minimal thoth function, referenced only by SP_Target_KhnProbe1.
+-- If that spell never appears in the character's spellbook, the mod's .khn scripts
+-- are not being loaded (or fail to compile wholesale).
+function SP_KhnProbe()
+    return ConditionResult(true)
+end
+
 function SP_CanVore()
     if HasStatus('SP_CooldownSwallow', context.Source).Result or HasStatus('SP_SC_BlockVoreTotal', context.Source).Result or HasStatus('SP_Inedible', context.Target).Result then
         return ConditionResult(false)

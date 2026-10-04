@@ -530,6 +530,30 @@ function SP_OnStatusRemoved(object, status, causee, storyActionID)
 end
 
 
+---Diagnostics: log which of the mod's spells are in the character's spellbook.
+---BookComponent.Spells elements are spell::SpellData; the SpellId lives on .Id
+---@param character CHARACTER
+function SP_LogSpellBookSP(character)
+    local ok, names = pcall(function ()
+        local out = {}
+        local book = Ext.Entity.Get(character).SpellBook
+        for _, entry in ipairs(book.Spells) do
+            local proto = entry.Id.Prototype
+            if type(proto) == "string" and string.sub(proto, 1, 3) == "SP_" then
+                table.insert(out, proto)
+            end
+        end
+        table.sort(out)
+        return out
+    end)
+    if ok then
+        _P("[SP] " .. character .. " spellbook: " .. (next(names) ~= nil and table.concat(names, ", ") or "(no SP_ spells)"))
+    else
+        _P("[SP] SpellBook read failed: " .. tostring(names))
+    end
+end
+
+
 ---triggers on item use
 ---@param character CHARACTER
 ---@param item ITEM
@@ -610,6 +634,7 @@ function SP_OnItemUsed(character, item, success)
             else
                 SP_RemovePassiveSafe(character, "SP_HasDebugSpells")
             end
+            SP_DelayCallTicks(5, function () SP_LogSpellBookSP(character) end)
         elseif template == 'SP_PotionOfAssign_b8d700d0-681f-4c38-b444-fe69b361d9b3' then
             if not SP_HasPassiveSafe(character, "SP_Assigner") then
                 SP_AddPassiveSafe(character, "SP_Assigner")
@@ -662,25 +687,7 @@ function SP_OnItemUsed(character, item, success)
                     .. " CanCock=" .. flag("SP_CanCockVore"))
                 -- diagnostics: which of the mod's spells are actually in the spellbook?
                 -- BookComponent.Spells elements are spell::SpellData; the SpellId lives on .Id
-                SP_DelayCallTicks(5, function ()
-                    local ok, names = pcall(function ()
-                        local out = {}
-                        local book = Ext.Entity.Get(character).SpellBook
-                        for _, entry in ipairs(book.Spells) do
-                            local proto = entry.Id.Prototype
-                            if type(proto) == "string" and string.sub(proto, 1, 3) == "SP_" then
-                                table.insert(out, proto)
-                            end
-                        end
-                        table.sort(out)
-                        return out
-                    end)
-                    if ok then
-                        _P("[SP] " .. character .. " spellbook: " .. (next(names) ~= nil and table.concat(names, ", ") or "(no SP_ spells)"))
-                    else
-                        _P("[SP] SpellBook read failed: " .. tostring(names))
-                    end
-                end)
+                SP_DelayCallTicks(5, function () SP_LogSpellBookSP(character) end)
             end
         end)
     end

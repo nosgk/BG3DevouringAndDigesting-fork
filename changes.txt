@@ -1,3 +1,21 @@
+Khonsu diagnostic round: field logs with the fixed spellbook reader showed the passive UnlockSpell
+boosts DO work (all 16 zone spells from SP_IsPred appear in the spellbook, including Regurgitate
+children whose RequirementConditions reference SP_IsActivePred), but the three
+SP_Target_Swallow_* spells never enter the spellbook at all. Game data proves UnlockSpell works
+for Target spells with SpellRoll/TargetConditions (49 game examples, e.g. Target_Bite_Gnoll_Bonus),
+so the remaining variable is whether the mod's own .khn condition functions load and compile.
+Added three probe spells (unlocked by the Potion of Debug Spells) that differ only in the
+conditions they exercise:
+- SP_Target_KhnProbe1: TargetConditions = SP_KhnProbe() (minimal .khn function)
+- SP_Target_KhnProbe2: TargetConditions = SP_CanVore() (the real swallow condition)
+- SP_Target_KhnProbe3: SpellRoll = SwallowCheck(false) (the real swallow roll)
+Drinking the debug potion now also prints the spellbook dump. Reading the dump:
+probe1 missing -> the .khn scripts are not loaded; probe2 missing -> SP_CanVore fails to compile;
+probe3 missing -> SwallowCheck fails to compile; all present -> the Swallow spell definition
+itself is the problem. The build now also ships the .khn files at pak-root Scripts/thoth
+(Dragonborn Enhanced SE ships them there) in addition to Mods/<mod>/Scripts/thoth, covering both
+possible loader discovery rules.
+
 ROOT CAUSE of the missing active Swallow spell (and of the never-appearing swallow roll, upstream
 #42) found: the mod's Khonsu/thoth condition scripts were packaged at the pak root
 (Scripts/thoth/helpers/*.khn), but the game only discovers thoth scripts under

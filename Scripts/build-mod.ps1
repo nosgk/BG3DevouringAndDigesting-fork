@@ -102,6 +102,18 @@ Get-ChildItem -Path $statsDataDir -Recurse -Filter "*.txt" | Where-Object { $_.D
     Write-Host "   $($_.FullName.Substring($statsDataDir.Length + 1)) -> $($_.Name)"
 }
 
+# --- duplicate thoth scripts to both discovery paths ---------------------------
+# Mods ship thoth helpers both at "Mods/<mod>/Scripts/thoth" (toolkit layout, the
+# game's own paks) and at pak-root "Scripts/thoth" (Dragonborn Enhanced SE ships
+# it there). The loader's exact discovery rule is unconfirmed, so ship both.
+Write-Host "== Duplicating thoth scripts to pak root"
+$thothSrc = Join-Path $StagingDir "Mods\DevouringAndDigesting\Scripts\thoth"
+if (Test-Path $thothSrc) {
+    Copy-Item -Recurse -Force -Path $thothSrc -Destination (Join-Path $StagingDir "Scripts\thoth")
+} else {
+    Write-Warning "No thoth scripts found at $thothSrc"
+}
+
 # --- pack --------------------------------------------------------------------
 Write-Host "== Creating pak"
 $PakPath = Join-Path $OutputDir "DevouringAndDigesting.pak"
