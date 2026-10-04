@@ -4,8 +4,14 @@ data "SpellType" "Target"
 data "TargetCeiling" "0"
 data "TargetFloor" ".25"
 data "TargetRadius" "MeleeMainWeaponRange"
-data "TargetConditions" "SP_CanVore()"
-data "SpellRoll" "SwallowCheck(true)"
+// TargetConditions/SpellRoll are INLINED (engine + game-shipped thoth functions only).
+// The previous SP_CanVore()/SwallowCheck() references to the mod's own .khn functions
+// made the engine drop the spell at spellbook registration - both the passive
+// UnlockSpell boost and Osi.AddSpell silently failed to add it, while zone spells
+// (whose khn references live in lazily-evaluated RequirementConditions) registered
+// fine. Semantics preserved from conditions.khn; pred rolls Athletics like Shove.
+data "TargetConditions" "not (HasStatus('SP_CooldownSwallow', context.Source) or HasStatus('SP_SC_BlockVoreTotal', context.Source) or HasStatus('SP_Inedible', context.Target)) and not HasAnyStatus({'SP_InLocus_O','SP_InLocus_A','SP_InLocus_U','SP_InLocus_C'},{},{},context.Source,context.Target,false) and (Character() and not Dead() or Item()) and IsMovable() and not Self() and CanShoveWeight() and not Grounded() and not Tagged('GASEOUS_FORM') and not Tagged('CANT_SHOVE_THROW') and not Tagged('Inedible')"
+data "SpellRoll" "Dead() or Item() or (Party(context.Source) and Party(context.Target)) or SkillCheck(Skill.Athletics, math.max(context.Target.GetPassiveSkill(Skill.Athletics), context.Target.GetPassiveSkill(Skill.Acrobatics)), IsSneakingOrInvisible() or HasPassive('SP_StretchyMaw', context.Source) or HasStatus('SP_RavenousStatus', context.Source) or HasStatus('SP_Tasty', context.Target) or IsCrowdControlled(context.Target), HasPassive('Evasion', context.Target) or HasStatus('SP_Disgusting', context.Target) or HasStatus('SP_Stuffed', context.Target))"
 data "SpellSuccess" "ApplyStatus(SP_Swallow_Lethal_O, 100, 0);AI_ONLY:IF(not HasStatus('SP_AI_HELPER_BLOCKVORE', context.Source) and not HasStatus('SP_Cant_Fit_Prey', context.Source)):ApplyStatus(AI_HELPER_BLOCKRESOURCES, 100, 3)"
 data "SpellFail" "ApplyStatus(SP_FailSwallow, 100, 0)"
 data "Icon" "Action_VampireBite"
@@ -32,7 +38,7 @@ new entry "SP_Target_Swallow_Endo"
 type "SpellData"
 using "SP_Target_Swallow"
 data "SpellType" "Target"
-data "SpellRoll" "SwallowCheck()"
+data "SpellRoll" "Dead() or Item() or Ally() or (Party(context.Source) and Party(context.Target)) or SkillCheck(Skill.Athletics, math.max(context.Target.GetPassiveSkill(Skill.Athletics), context.Target.GetPassiveSkill(Skill.Acrobatics)), IsSneakingOrInvisible() or HasPassive('SP_StretchyMaw', context.Source) or HasStatus('SP_RavenousStatus', context.Source) or HasStatus('SP_Tasty', context.Target) or IsCrowdControlled(context.Target), HasPassive('Evasion', context.Target) or HasStatus('SP_Disgusting', context.Target) or HasStatus('SP_Stuffed', context.Target))"
 data "SpellSuccess" "ApplyStatus(SP_DoSwallow_Endo_O, 100, 0);AI_ONLY:IF(not HasStatus('SP_AI_HELPER_BLOCKVORE', context.Source)):ApplyStatus(AI_HELPER_WARDINGBOND,100,10);AI_ONLY:IF(not HasStatus('SP_AI_HELPER_BLOCKVORE', context.Source)):ApplyStatus(SP_AI_HELPER_ENDO,100,10)"
 data "DisplayName" "hf1967968gea50g42d1g9474gdce71387b2d3;1"
 data "Description" "h60376d5fg24b7g40e4gb8f4g0909a3d9b526;7"

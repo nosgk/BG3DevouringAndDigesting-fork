@@ -1,3 +1,28 @@
+ROOT CAUSE of the active Swallow spell never registering (found after the Osi.AddSpell sync also
+failed silently): the engine resolves/compiles a Target spell's TargetConditions and SpellRoll when
+the spell is registered into a character's spellbook - through BOTH grant paths (passive
+UnlockSpell boost and Osi.AddSpell). Those fields referenced the mod's own Khonsu functions
+(SP_CanVore / SwallowCheck), which the engine cannot resolve because the mod's .khn thoth scripts
+are not being loaded, so the compile failed and the spell was silently dropped. Zone spells were
+unaffected because their khn references live in RequirementConditions/CycleConditions, which are
+evaluated lazily at cast time. Evidence: game data has 49 UnlockSpell'd Target spells (35 with
+SpellRoll, 44 with TargetConditions) that all register fine using only game-shipped thoth
+functions; flags theories (IsSpell/Level/MemoryCost) are ruled out (34/32/34 of those 49 lack
+them). The game's own ShoveCheck (CommonConditions.khn:1725) uses exactly the pattern needed.
+
+FIX: TargetConditions and SpellRoll of the Swallow spells, and the OnApplyRoll of the
+SP_TrySwallow_Endo/Lethal_O statuses, are now INLINED using only engine and game-shipped thoth
+functions (Character/Dead/Item/Self/Tagged/HasStatus/HasAnyStatus/HasPassive/IsMovable/Grounded/
+CanShoveWeight/Party/Ally/IsSneakingOrInvisible/IsCrowdControlled/SkillCheck/math.max - the game's
+Shove does the same). Semantics preserved from conditions.khn (cooldown/block/inedible/voreception
+guards, advantage/disadvantage terms, willing ally/party branch as auto-success); simplifications:
+the pred always contests with Athletics like Shove (the old best-of-Athletics/Acrobatics/
+Intimidation pred-skill selection is dropped), and SP_TrySwallow_Lethal_O now uses the lethal
+willing rules (upstream accidentally called SwallowCheck() with no argument, i.e. endo rules).
+The mod's conditions.khn is unchanged and still provides SP_CanVore/SwallowCheck for anything
+else that references them; the probe spells from the previous round remain available via the
+Potion of Debug Spells.
+
 Active Swallow spell grant reworked after comparing with the upstream repo: the spell stat
 definitions are identical to upstream, and the passive UnlockSpell variant (with or without the
 upstream IF(Tagged('PREDATOR')) conditional) demonstrably never puts these Target container spells
