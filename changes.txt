@@ -1,3 +1,22 @@
+ROOT CAUSE of the missing active Swallow spell (and of the never-appearing swallow roll, upstream
+#42) found: the mod's Khonsu/thoth condition scripts were packaged at the pak root
+(Scripts/thoth/helpers/*.khn), but the game only discovers thoth scripts under
+Mods/<ModName>/Scripts/thoth/helpers/ (the game itself keeps them at Mods/Shared/Scripts/thoth and
+Mods/Honour/Scripts/thoth). The files were therefore never loaded, so every SP_ condition function
+(SP_CanVore, SwallowCheck, SP_IsActivePred, ...) was undefined at runtime - which killed the
+TargetConditions/SpellRoll of all SP_Target_Swallow_* spells while spells using only engine
+functions (OfferMe, SwitchToLethal) kept working. The scripts now live at
+Mods/DevouringAndDigesting/Scripts/thoth/helpers/ in the source tree and in the pak.
+
+Spellbook diagnostic fixed: SE v32's entity SpellBook (eoc::spell::BookComponent) stores its
+entries as spell::SpellData whose SpellId lives on .Id, so the previous entry.SpellId.Prototype
+read threw "Property does not exist: spell::SpellData::SpellId". It now reads entry.Id.Prototype.
+
+SP_UpdateBelly now logs the character's CharacterCreationAppearance.Visuals two ticks after
+applying the override, to distinguish a code-path failure from a visual that applies but silently
+fails to render (the Dragonborn case, where the belly GR2s are baked against the pre-Patch-8
+skeleton and need a re-rig).
+
 Four follow-up fixes after stats started loading (all verified in field logs):
 - Vore potions bag no longer double-fills: with stats loading, the bag template's own treasure
 	table generates its contents, so the manual potion adds from the previous fix were removed.

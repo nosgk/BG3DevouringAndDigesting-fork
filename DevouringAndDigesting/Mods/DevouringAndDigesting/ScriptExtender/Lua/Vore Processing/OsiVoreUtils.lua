@@ -99,6 +99,18 @@ function SP_UpdateBelly(pred, weight)
         SP_DelayCallTicks(2, function ()
             _P("Updating belly visual; Race: " .. predRace .. " Sex: " .. sex .. " Belly: " .. bellyShape)
             Osi.AddCustomVisualOverride(pred, bellyShape)
+            -- probe: confirm the override actually stuck (distinguishes code-path
+            -- failure from a visual that applies but silently fails to render)
+            SP_DelayCallTicks(2, function ()
+                local visuals = {}
+                local app = Ext.Entity.Get(pred).CharacterCreationAppearance
+                if app ~= nil then
+                    for _, v in pairs(app.Visuals) do
+                        table.insert(visuals, tostring(v))
+                    end
+                end
+                _P("Visuals after override: " .. table.concat(visuals, ", "))
+            end)
         end)
     end
 end

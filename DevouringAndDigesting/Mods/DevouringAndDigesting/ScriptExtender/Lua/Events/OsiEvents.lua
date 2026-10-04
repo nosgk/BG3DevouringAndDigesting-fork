@@ -661,12 +661,13 @@ function SP_OnItemUsed(character, item, success)
                     .. " CanUnbirth=" .. flag("SP_CanUnbirth")
                     .. " CanCock=" .. flag("SP_CanCockVore"))
                 -- diagnostics: which of the mod's spells are actually in the spellbook?
+                -- BookComponent.Spells elements are spell::SpellData; the SpellId lives on .Id
                 SP_DelayCallTicks(5, function ()
                     local ok, names = pcall(function ()
                         local out = {}
                         local book = Ext.Entity.Get(character).SpellBook
                         for _, entry in ipairs(book.Spells) do
-                            local proto = entry.SpellId.Prototype
+                            local proto = entry.Id.Prototype
                             if type(proto) == "string" and string.sub(proto, 1, 3) == "SP_" then
                                 table.insert(out, proto)
                             end
