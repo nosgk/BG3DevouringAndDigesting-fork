@@ -35,6 +35,27 @@ stay in place as a second path; the Khonsu probe spells from the previous round 
 via the Potion of Debug Spells to determine whether the mod's .khn condition functions load (that
 decides whether the spell, once visible, can actually target and roll).
 
+r15 - the r14 double-dump log is decisive: ALL five probes registered (SP_Test_A/B/C including
+children, D with the game-khn helper CanShoveWeight, E with HasStatus) while SP_Target_Swallow_O
+still did not - killing both the khn-resolution theories entirely. With shape, flags, roll,
+conditions and grant mechanisms all exonerated, the last remaining suspect is the stat entry
+itself: the Swallow family is spread across two files with 'using' inheritance chains (variants ->
+base), and if the stats loader resolves cross-file 'using' unreliably the loaded entries can end
+up missing critical fields (e.g. SpellType) - Ext.Stats.Get still finds them ("loaded: true") but
+they are not valid spells, so every grant path silently drops them; the fresh-named probe entries
+(self-contained or same-file using) register fine.
+
+- The entire Swallow family (base/Endo/Lethal, all four containers, all twelve children, the
+  zone PreySwallow subfamily - 28 entries) is now flattened into a single file with ZERO 'using':
+  every entry carries all of its fields literally, in dependency order.
+- Session log now dumps the resolved shape of SP_Target_Swallow_O next to SP_Test_C_ContainerRoll
+  (SpellType/SpellFlags/UseCosts/ContainerSpells/SpellSuccess/TargetConditions length) - if the
+  flattened stat still fails to register while its dump looks identical to the working probe, the
+  remaining variable is character/save history, so also test the potion on a character who has
+  never been a pred in that save.
+- The diagnostic probe spells got unique raw-handle display names so they can no longer be
+  mistaken for Lick (or for real vore spells). Build tag r15.
+
 r14 - Swallow conditions reduced to the EXACT engine-builtin set proven to register. The r13 log
 was inconclusive (only one locus potion -> only the always-empty first dump), but the user saw no
 properly-named Swallow button, so registration still failed with the r13 conditions; the remaining

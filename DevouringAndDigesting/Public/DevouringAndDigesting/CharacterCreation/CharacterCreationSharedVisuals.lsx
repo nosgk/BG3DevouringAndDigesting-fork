@@ -3814,7 +3814,57 @@
 
 
 
+            <node id="CharacterCreationSharedVisual">
+                <attribute id="DisplayName" type="TranslatedString" handle="h3e21526aga300g458cgb359gff46cedfb300" version="1" />
+                <attribute id="SlotName" type="FixedString" value="DragonbornTop" />
+                <attribute id="UUID" type="guid" value="7f5ecdda-2aa5-40e8-8dac-1f6f2a4c16cc" />
+                <attribute id="VisualResource" type="guid" value="432c2442-3152-431c-9689-2f244e50876f" />
+                <children>
+                    <node id="Tags">
+                    </node>
+                </children>
+            </node>
+            <node id="CharacterCreationSharedVisual">
+                <attribute id="DisplayName" type="TranslatedString" handle="h3e21526aga300g458cgb359gff46cedfb300" version="1" />
+                <attribute id="SlotName" type="FixedString" value="DragonbornJaw" />
+                <attribute id="UUID" type="guid" value="ea9861eb-ac79-4c7a-b0fb-df74b8df3283" />
+                <attribute id="VisualResource" type="guid" value="432c2442-3152-431c-9689-2f244e50876f" />
+                <children>
+                    <node id="Tags">
+                    </node>
+                </children>
+            </node>
+            <node id="CharacterCreationSharedVisual">
+                <attribute id="DisplayName" type="TranslatedString" handle="h3e21526aga300g458cgb359gff46cedfb300" version="1" />
+                <attribute id="SlotName" type="FixedString" value="DragonbornChin" />
+                <attribute id="UUID" type="guid" value="700f2c4d-aa36-4f0a-9afc-f05939841739" />
+                <attribute id="VisualResource" type="guid" value="432c2442-3152-431c-9689-2f244e50876f" />
+                <children>
+                    <node id="Tags">
+                    </node>
+                </children>
+            </node>
+            <node id="CharacterCreationSharedVisual">
+                <attribute id="DisplayName" type="TranslatedString" handle="h3e21526aga300g458cgb359gff46cedfb300" version="1" />
+                <attribute id="SlotName" type="FixedString" value="Hair" />
+                <attribute id="UUID" type="guid" value="3aad9f7f-557e-4ea0-88ed-41fcd38f3c8a" />
+                <attribute id="VisualResource" type="guid" value="432c2442-3152-431c-9689-2f244e50876f" />
+                <children>
+                    <node id="Tags">
+                    </node>
+                </children>
+            </node>
+            <node id="CharacterCreationSharedVisual">
+                <attribute id="DisplayName" type="TranslatedString" handle="h3e21526aga300g458cgb359gff46cedfb300" version="1" />
+                <attribute id="SlotName" type="FixedString" value="Beard" />
+                <attribute id="UUID" type="guid" value="ef7ec058-5dcc-4857-b9dc-8f15ba5ced15" />
+                <attribute id="VisualResource" type="guid" value="6e0181e5-5dd3-4c36-a47d-14a1e98eafef" />
+                <children>
+                    <node id="Tags">
+                    </node>
+                </children>
+            </node>
             </children>
         </node>
-    </region>
-</save>
+        </region>
+    </save>

@@ -94,7 +94,29 @@ function SP_OnSessionLoaded()
 
     -- one-time diagnostics: are the mod's key stats actually loaded?
     SP_DelayCallTicks(10, function ()
-        _P("[SP] build: r14 (OfferMe-proven-native conditions, rolls simplified, TestD/E probes)")
+        _P("[SP] build: r15 (swallow family flattened no-using, statdump probe)")
+        -- compare the resolved shape of the real Swallow container against the
+        -- probe container that provably registers; a broken 'using' resolution
+        -- would show up as missing/nil fields here
+        for _, statName in ipairs({ "SP_Target_Swallow_O", "SP_Test_C_ContainerRoll" }) do
+            local ok, stat = pcall(function () return Ext.Stats.Get(statName) end)
+            if not ok or stat == nil then
+                _P("[SP] statdump " .. statName .. ": <unavailable>")
+            else
+                local parts = {}
+                for _, field in ipairs({ "SpellType", "SpellFlags", "UseCosts", "ContainerSpells", "SpellSuccess" }) do
+                    local okf, v = pcall(function () return stat[field] end)
+                    local repr = okf and tostring(v) or "<no prop>"
+                    if type(v) == "string" and #v > 50 then repr = string.sub(v, 1, 50) .. "..." end
+                    parts[#parts+1] = field .. "=" .. repr
+                end
+                local okc, conds = pcall(function () return stat.TargetConditions end)
+                if okc and type(conds) == "string" then
+                    parts[#parts+1] = "TargetConditionsLen=" .. tostring(#conds)
+                end
+                _P("[SP] statdump " .. statName .. ": " .. table.concat(parts, " | "))
+            end
+        end
         for _, statName in ipairs({ "SP_IsPred", "SP_CanOralVore", "SP_PotionOfOralVore",
             "SP_Stuffed", "SP_Target_Swallow_O", "SP_Target_Swallow_Lethal_O" }) do
             _P("[SP] stat " .. statName .. " loaded: " .. tostring(Ext.Stats.Get(statName) ~= nil))
