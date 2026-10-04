@@ -17,7 +17,7 @@
                     <attribute id="ID" type="FixedString" value="1f68cd74-12b9-40b9-a106-595b0e3b2e25" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_1" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -54,7 +54,7 @@
                     <attribute id="ID" type="FixedString" value="e7404105-bf7d-436b-83eb-60ab42d61c46" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_2" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -91,7 +91,7 @@
                     <attribute id="ID" type="FixedString" value="10a8719c-587e-4c2c-83b6-40f1c652597e" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_3" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -128,7 +128,7 @@
                     <attribute id="ID" type="FixedString" value="ab7818ea-3fb7-4882-bc07-689ec0e037eb" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_4" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -165,7 +165,7 @@
                     <attribute id="ID" type="FixedString" value="a8071db7-2a00-48a0-b5ba-15cdef9e8222" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_5" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -202,7 +202,7 @@
                     <attribute id="ID" type="FixedString" value="739df131-53a0-4661-b8d5-dff27d8a8fe9" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_6" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -239,7 +239,7 @@
                     <attribute id="ID" type="FixedString" value="1d6afe6f-a8e7-4f40-af39-f6a3e900293c" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_7" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -276,7 +276,7 @@
                     <attribute id="ID" type="FixedString" value="5a1a70a2-e9e7-44ac-9a2a-319882320a57" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_8" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -313,7 +313,7 @@
                     <attribute id="ID" type="FixedString" value="2f4e79c5-7967-4bf1-a191-dca11783ffb9" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_9" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -350,7 +350,7 @@
                     <attribute id="ID" type="FixedString" value="448461f2-a667-4b44-a88b-42e16a890acb" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_10" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -387,7 +387,7 @@
                     <attribute id="ID" type="FixedString" value="b42ebd09-8063-49ff-8b29-efbf3d5dae07" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_11" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -424,7 +424,7 @@
                     <attribute id="ID" type="FixedString" value="1fc78a9a-b53b-40fe-9299-c4647f94f51d" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_12" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -461,7 +461,7 @@
                     <attribute id="ID" type="FixedString" value="50fbd339-ebf5-4426-8a64-93bff2413332" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_13" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -498,7 +498,7 @@
                     <attribute id="ID" type="FixedString" value="17ed6f06-d01c-4aec-93bf-aeb93a852119" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_14" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -535,7 +535,7 @@
                     <attribute id="ID" type="FixedString" value="412eab51-6467-4af7-bfd4-68ecb4481a91" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_15" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -572,7 +572,7 @@
                     <attribute id="ID" type="FixedString" value="e0ffbae8-719c-48ef-8542-237f86aac004" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_16" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -609,7 +609,7 @@
                     <attribute id="ID" type="FixedString" value="120fc984-ce9f-4de8-a9a5-09d048f4217c" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_17" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -646,7 +646,7 @@
                     <attribute id="ID" type="FixedString" value="1356e031-9834-4dfb-8243-beddada3bd17" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_18" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -683,7 +683,7 @@
                     <attribute id="ID" type="FixedString" value="ab01570d-7c78-4d9e-a829-3ea5ba825f42" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_19" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -720,7 +720,7 @@
                     <attribute id="ID" type="FixedString" value="d03d7d37-3a9d-4d90-9de5-d0e8863a5317" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_20" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -757,7 +757,7 @@
                     <attribute id="ID" type="FixedString" value="573cea2e-a743-463e-bcf9-a67e7372c11c" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_21" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -794,7 +794,7 @@
                     <attribute id="ID" type="FixedString" value="2626808f-298e-4476-bf85-fe7178c6b8ec" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_22" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -831,7 +831,7 @@
                     <attribute id="ID" type="FixedString" value="cdd1fe4b-b3c5-4717-95ce-036cd5cf3f96" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_23" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -868,7 +868,7 @@
                     <attribute id="ID" type="FixedString" value="84b25bb9-d4cb-4562-acfa-a6a194908f3a" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_24" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -905,7 +905,7 @@
                     <attribute id="ID" type="FixedString" value="857c11e8-a417-42bc-a29d-6fb933e74198" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_25" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -942,7 +942,7 @@
                     <attribute id="ID" type="FixedString" value="cd196794-41b0-426f-9cad-c00f9add92f0" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_26" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -979,7 +979,7 @@
                     <attribute id="ID" type="FixedString" value="7f75182a-7b5f-4d61-ae55-a8ac26707e37" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_27" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1016,7 +1016,7 @@
                     <attribute id="ID" type="FixedString" value="6e5c5620-e92f-4ccb-99a8-b379cee98d84" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_28" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1053,7 +1053,7 @@
                     <attribute id="ID" type="FixedString" value="36327119-2892-4231-9a4a-2846410ef1b0" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_29" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1090,7 +1090,7 @@
                     <attribute id="ID" type="FixedString" value="7a27ce89-3d05-4d31-b352-fb9e04f52c89" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_30" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1127,7 +1127,7 @@
                     <attribute id="ID" type="FixedString" value="938a329e-8089-4ecf-90b9-b5e15727c2fc" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_31" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1164,7 +1164,7 @@
                     <attribute id="ID" type="FixedString" value="4e133758-2927-4b1d-9bf5-34f489d9e769" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_32" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1201,7 +1201,7 @@
                     <attribute id="ID" type="FixedString" value="5752fa59-181a-4a5d-8207-45c09c806216" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_33" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1238,7 +1238,7 @@
                     <attribute id="ID" type="FixedString" value="e2852665-8add-4c75-8269-f1e8c4b235f9" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_34" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1275,7 +1275,7 @@
                     <attribute id="ID" type="FixedString" value="cb679374-e4ba-47c2-9ada-33673bfebd38" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_35" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1312,7 +1312,7 @@
                     <attribute id="ID" type="FixedString" value="41ed9cbe-69c5-4e16-ade7-952b4e48f767" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_36" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1349,7 +1349,7 @@
                     <attribute id="ID" type="FixedString" value="a00f7ae2-f089-469f-8a62-c44687dbbf96" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_37" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1386,7 +1386,7 @@
                     <attribute id="ID" type="FixedString" value="f2a7dde8-de8d-4ebd-9565-7574c69b1196" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_38" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1423,7 +1423,7 @@
                     <attribute id="ID" type="FixedString" value="4d891f9b-1a63-4908-8461-ff00a8b135f3" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_39" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1460,7 +1460,7 @@
                     <attribute id="ID" type="FixedString" value="432c2442-3152-431c-9689-2f244e50876f" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_40" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1497,7 +1497,7 @@
                     <attribute id="ID" type="FixedString" value="eaaf0797-742f-4304-8ddd-c97c7ade1d18" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_41" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1534,7 +1534,7 @@
                     <attribute id="ID" type="FixedString" value="2e716f81-496c-48bf-948e-0642abfb1969" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_42" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1571,7 +1571,7 @@
                     <attribute id="ID" type="FixedString" value="4651968f-e480-43d0-9fb8-2791130ca306" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_43" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1608,7 +1608,7 @@
                     <attribute id="ID" type="FixedString" value="fef018c6-eb52-44e3-851b-6ffb4c7d580f" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_44" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1645,7 +1645,7 @@
                     <attribute id="ID" type="FixedString" value="e10843be-c3b4-46cd-bf2e-96b97e7819b9" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_45" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1682,7 +1682,7 @@
                     <attribute id="ID" type="FixedString" value="d1f0e77b-1358-4d33-bdc3-e33e764a99e1" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_46" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1719,7 +1719,7 @@
                     <attribute id="ID" type="FixedString" value="118cda18-57f5-4334-9e21-f57389f54608" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_47" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1756,7 +1756,7 @@
                     <attribute id="ID" type="FixedString" value="2c415eea-e799-4925-bc65-5a2f0799e053" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_48" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1793,7 +1793,7 @@
                     <attribute id="ID" type="FixedString" value="8279b503-5c23-4b08-b4f0-e0018b0c868b" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_49" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
@@ -1830,7 +1830,7 @@
                     <attribute id="ID" type="FixedString" value="07cf074f-768e-4abc-b846-9ceedfa11e5e" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_50" />
-                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
                     <attribute id="RemapperSlotId" type="FixedString" value="" />
                     <attribute id="ScalpMaterialId" type="FixedString" value="" />
                     <attribute id="SkeletonResource" type="FixedString" value="" />
