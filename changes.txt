@@ -1,3 +1,15 @@
+Active Swallow spell grant reworked after comparing with the upstream repo: the spell stat
+definitions are identical to upstream, and the passive UnlockSpell variant (with or without the
+upstream IF(Tagged('PREDATOR')) conditional) demonstrably never puts these Target container spells
+into the spellbook, while zone spells granted by the very same mechanism do enter it. The prey-side
+pattern that provably works in this environment - Osi.AddSpell - is now used for the pred side too:
+new SP_SyncSwallowSpells(character) keeps the four SP_Target_Swallow_O/A/U/C container spells in
+sync with the character's locus passives. It runs whenever loci change (vore potions), on NPC
+predator/prey role assignment, and when locus feats are gained at level-up. The passive UnlockSpells
+stay in place as a second path; the Khonsu probe spells from the previous round are still available
+via the Potion of Debug Spells to determine whether the mod's .khn condition functions load (that
+decides whether the spell, once visible, can actually target and roll).
+
 Khonsu diagnostic round: field logs with the fixed spellbook reader showed the passive UnlockSpell
 boosts DO work (all 16 zone spells from SP_IsPred appear in the spellbook, including Regurgitate
 children whose RequirementConditions reference SP_IsActivePred), but the three

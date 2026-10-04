@@ -281,6 +281,29 @@ function SP_GetPredLoci(pred, forRegurgitate)
     return loci
 end
 
+---Keeps the active Swallow container spells in the pred's spellbook in sync with
+---their locus passives. The passive UnlockSpell boost has proven unreliable for
+---these Target container spells (zone spells from the same mechanism enter the
+---spellbook, the Swallow containers never do), so the prey-side pattern that
+---demonstrably works - Osi.AddSpell/Osi.RemoveSpell - is used here as well.
+---@param pred GUIDSTRING
+function SP_SyncSwallowSpells(pred)
+    local loci = SP_GetPredLoci(pred)
+    local containers = {
+        O = "SP_Target_Swallow_O",
+        A = "SP_Target_Swallow_A",
+        U = "SP_Target_Swallow_U",
+        C = "SP_Target_Swallow_C",
+    }
+    for locus, spell in pairs(containers) do
+        if string.find(loci, locus, 1, true) then
+            Osi.AddSpell(pred, spell, 0, 0)
+        else
+            Osi.RemoveSpell(pred, spell, 1)
+        end
+    end
+end
+
 ---plays a random gurgle
 ---@param pred GUIDSTRING
 ---@param preyLethal integer

@@ -230,6 +230,7 @@ function SP_OnSpellCastTarget(caster, target, spell, spellType, spellElement, st
                         end
                     end
                 end
+                SP_DelayCallTicks(2, function () SP_SyncSwallowSpells(target) end)
             end
         elseif spellName == 'AssignNPCPrey' then
             _P(target)
@@ -241,6 +242,7 @@ function SP_OnSpellCastTarget(caster, target, spell, spellType, spellElement, st
                 Osi.RemovePassive(target, "SP_CanCockVore")
                 Osi.RemovePassive(target, "SP_IsPred")
             end
+            SP_DelayCallTicks(2, function () SP_SyncSwallowSpells(target) end)
             if Osi.HasPassive(target, "SP_NotPred") == 0 then
                 Osi.AddPassive(target, "SP_NotPred")
             end
@@ -677,6 +679,7 @@ function SP_OnItemUsed(character, item, success)
                 SP_AddPassiveSafe(character, "SP_IsPred")
             end
             if changedLoci ~= 0 then
+                SP_SyncSwallowSpells(character)
                 local function flag(name)
                     return SP_HasPassiveSafe(character, name) and "1" or "0"
                 end
@@ -719,6 +722,9 @@ function SP_OnLevelUp(character)
             if addedLoci > 0 and Osi.HasPassive(character, "SP_IsPred") == 0 then
                 Osi.RemovePassive(character, "SP_NotPred")
                 Osi.AddPassive(character, "SP_IsPred")
+            end
+            if addedLoci > 0 then
+                SP_SyncSwallowSpells(character)
             end
         end)
     end

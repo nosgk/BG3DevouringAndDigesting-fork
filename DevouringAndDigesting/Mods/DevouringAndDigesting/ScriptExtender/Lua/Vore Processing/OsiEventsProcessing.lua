@@ -113,6 +113,7 @@ function SP_AssignRoleRandom(character)
     if Osi.HasPassive(character, "SP_CanOralVore") == 1 or Osi.HasPassive(character, "SP_CanAnalVore") == 1 or
         Osi.HasPassive(character, "SP_CanUnbirth") == 1 or Osi.HasPassive(character, "SP_CanCockVore") == 1 then
         Osi.AddPassive(character, "SP_IsPred")
+        SP_DelayCallTicks(2, function () SP_SyncSwallowSpells(character) end)
         return
     end
     if selectedPobability > 0 then
@@ -121,6 +122,7 @@ function SP_AssignRoleRandom(character)
             _P("Adding PRED to " .. character)
             Osi.AddPassive(character, "SP_IsPred")
             Osi.AddPassive(character, "SP_CanOralVore")
+            SP_DelayCallTicks(2, function () SP_SyncSwallowSpells(character) end)
             return
         end
     end
