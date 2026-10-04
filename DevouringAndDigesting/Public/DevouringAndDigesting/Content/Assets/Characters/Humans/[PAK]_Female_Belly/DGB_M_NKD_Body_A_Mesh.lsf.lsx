@@ -5,8 +5,7 @@
         <node id="VisualBank">
             <children>
                 <!-- 1 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -43,8 +42,7 @@
                     </children>
                 </node>
                 <!-- 2 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -81,8 +79,7 @@
                     </children>
                 </node>
                 <!-- 3 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -119,8 +116,7 @@
                     </children>
                 </node>
                 <!-- 4 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -157,8 +153,7 @@
                     </children>
                 </node>
                 <!-- 5 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -195,8 +190,7 @@
                     </children>
                 </node>
                 <!-- 6 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -233,8 +227,7 @@
                     </children>
                 </node>
                 <!-- 7 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -271,8 +264,7 @@
                     </children>
                 </node>
                 <!-- 8 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -309,8 +301,7 @@
                     </children>
                 </node>
                 <!-- 9 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -347,8 +338,7 @@
                     </children>
                 </node>
                 <!-- 10 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -385,8 +375,7 @@
                     </children>
                 </node>
                 <!-- 11 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -423,8 +412,7 @@
                     </children>
                 </node>
                 <!-- 12 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -461,8 +449,7 @@
                     </children>
                 </node>
                 <!-- 13 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -499,8 +486,7 @@
                     </children>
                 </node>
                 <!-- 14 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -537,8 +523,7 @@
                     </children>
                 </node>
                 <!-- 15 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -575,8 +560,7 @@
                     </children>
                 </node>
                 <!-- 16 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -613,8 +597,7 @@
                     </children>
                 </node>
                 <!-- 17 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -651,8 +634,7 @@
                     </children>
                 </node>
                 <!-- 18 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -689,8 +671,7 @@
                     </children>
                 </node>
                 <!-- 19 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -727,8 +708,7 @@
                     </children>
                 </node>
                 <!-- 20 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -765,8 +745,7 @@
                     </children>
                 </node>
                 <!-- 21 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -803,8 +782,7 @@
                     </children>
                 </node>
                 <!-- 22 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -841,8 +819,7 @@
                     </children>
                 </node>
                 <!-- 23 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -879,8 +856,7 @@
                     </children>
                 </node>
                 <!-- 24 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -917,8 +893,7 @@
                     </children>
                 </node>
                 <!-- 25 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -955,8 +930,7 @@
                     </children>
                 </node>
                 <!-- 26 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -993,8 +967,7 @@
                     </children>
                 </node>
                 <!-- 27 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1031,8 +1004,7 @@
                     </children>
                 </node>
                 <!-- 28 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1069,8 +1041,7 @@
                     </children>
                 </node>
                 <!-- 29 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1107,8 +1078,7 @@
                     </children>
                 </node>
                 <!-- 30 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1145,8 +1115,7 @@
                     </children>
                 </node>
                 <!-- 31 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1183,8 +1152,7 @@
                     </children>
                 </node>
                 <!-- 32 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1221,8 +1189,7 @@
                     </children>
                 </node>
                 <!-- 33 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1259,8 +1226,7 @@
                     </children>
                 </node>
                 <!-- 34 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1297,8 +1263,7 @@
                     </children>
                 </node>
                 <!-- 35 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1335,8 +1300,7 @@
                     </children>
                 </node>
                 <!-- 36 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1373,8 +1337,7 @@
                     </children>
                 </node>
                 <!-- 37 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1411,8 +1374,7 @@
                     </children>
                 </node>
                 <!-- 38 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1449,8 +1411,7 @@
                     </children>
                 </node>
                 <!-- 39 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1487,8 +1448,7 @@
                     </children>
                 </node>
                 <!-- 40 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1497,7 +1457,7 @@
                     <attribute id="ClothColliderResourceID" type="FixedString" value="" />
                     <attribute id="HairPresetResourceId" type="FixedString" value="" />
                     <attribute id="HairType" type="uint8" value="0" />
-                    <attribute id="ID" type="FixedString" value="6e0181e5-5dd3-4c36-a47d-14a1e98eafef" />
+                    <attribute id="ID" type="FixedString" value="432c2442-3152-431c-9689-2f244e50876f" />
                     <attribute id="MaterialType" type="uint8" value="0" />
                     <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_40" />
                     <attribute id="NeedsSkeletonRemap" type="bool" value="False" />
@@ -1525,8 +1485,7 @@
                     </children>
                 </node>
                 <!-- 41 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1563,8 +1522,7 @@
                     </children>
                 </node>
                 <!-- 42 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1601,8 +1559,7 @@
                     </children>
                 </node>
                 <!-- 43 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1639,8 +1596,7 @@
                     </children>
                 </node>
                 <!-- 44 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1677,8 +1633,7 @@
                     </children>
                 </node>
                 <!-- 45 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1715,8 +1670,7 @@
                     </children>
                 </node>
                 <!-- 46 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1753,8 +1707,7 @@
                     </children>
                 </node>
                 <!-- 47 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1791,8 +1744,7 @@
                     </children>
                 </node>
                 <!-- 48 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1829,8 +1781,7 @@
                     </children>
                 </node>
                 <!-- 49 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1867,8 +1818,7 @@
                     </children>
                 </node>
                 <!-- 50 -->
-                
-<node id="Resource">
+                <node id="Resource">
                     <attribute id="AttachBone" type="FixedString" value="" />
                     <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
                     <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
@@ -1901,6 +1851,42 @@
                             <attribute id="LOD" type="uint8" value="0" />
                             <attribute id="MaterialID" type="FixedString" value="7a5afaa4-7427-853d-c6b7-90454f383d0e" />
                             <attribute id="ObjectID" type="FixedString" value="SP_DGB_M_Belly_50.DGB_M_NKD_Body_A_Mesh.0" />
+                        </node>
+                    </children>
+                </node>
+            <node id="Resource">
+                    <attribute id="AttachBone" type="FixedString" value="" />
+                    <attribute id="AttachmentSkeletonResource" type="FixedString" value="" />
+                    <attribute id="BlueprintInstanceResourceID" type="FixedString" value="" />
+                    <attribute id="BoundsMax" type="fvec3" value="0.04660766 1.031223 0.05886364" />
+                    <attribute id="BoundsMin" type="fvec3" value="-0.04640537 0.8961504 -0.1221507" />
+                    <attribute id="ClothColliderResourceID" type="FixedString" value="" />
+                    <attribute id="HairPresetResourceId" type="FixedString" value="" />
+                    <attribute id="HairType" type="uint8" value="0" />
+                    <attribute id="ID" type="FixedString" value="6e0181e5-5dd3-4c36-a47d-14a1e98eafef" />
+                    <attribute id="MaterialType" type="uint8" value="0" />
+                    <attribute id="Name" type="LSString" value="SP_DGB_M_Belly_40" />
+                    <attribute id="NeedsSkeletonRemap" type="bool" value="True" />
+                    <attribute id="RemapperSlotId" type="FixedString" value="" />
+                    <attribute id="ScalpMaterialId" type="FixedString" value="" />
+                    <attribute id="SkeletonResource" type="FixedString" value="" />
+                    <attribute id="SkeletonSlot" type="FixedString" value="" />
+                    <attribute id="Slot" type="FixedString" value="Beard" />
+                    <attribute id="SoftbodyResourceID" type="FixedString" value="" />
+                    <attribute id="SourceFile" type="LSString" value="Generated/Public/DevouringAndDigesting/Assets/Characters/Humans/SP_DGB_M_Belly_40.GR2" />
+                    <attribute id="SupportsVertexColorMask" type="bool" value="False" />
+                    <attribute id="Template" type="FixedString" value="Generated/Public/DevouringAndDigesting/Assets/Characters/Humans/SP_DGB_M_Belly_40.Dummy_Root.0" />
+                    <attribute id="_OriginalFileVersion_" type="int64" value="144115207403209033" />
+                    <children>
+                        <node id="AnimationWaterfall">
+                            <attribute id="Object" type="FixedString" value="" />
+                        </node>
+                        <node id="Base" />
+                        <node id="ClothProxyMapping" />
+                        <node id="Objects">
+                            <attribute id="LOD" type="uint8" value="0" />
+                            <attribute id="MaterialID" type="FixedString" value="7a5afaa4-7427-853d-c6b7-90454f383d0e" />
+                            <attribute id="ObjectID" type="FixedString" value="SP_DGB_M_Belly_40.DGB_M_NKD_Body_A_Mesh.0" />
                         </node>
                     </children>
                 </node>

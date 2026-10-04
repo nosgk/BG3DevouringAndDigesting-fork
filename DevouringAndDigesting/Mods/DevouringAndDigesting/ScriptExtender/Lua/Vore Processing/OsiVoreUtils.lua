@@ -111,6 +111,33 @@ function SP_UpdateBelly(pred, weight)
                 end
                 _P("Visuals after override: " .. table.concat(visuals, ", "))
             end)
+            -- belly spawn diagnostics (TEMPORARY): the same visual resource via
+            -- alternative CC slots, a NeedsSkeletonRemap bank variant, and a
+            -- vanilla beard control. One swallow after a fresh load reports
+            -- which chain actually spawns; observe the character right after.
+            if SP_BellyProbesDone == nil then SP_BellyProbesDone = {} end
+            if not SP_BellyProbesDone[pred] then
+                SP_BellyProbesDone[pred] = true
+                local probes = {
+                    { "7f5ecdda-2aa5-40e8-8dac-1f6f2a4c16cc", "DragonbornTop" },
+                    { "ea9861eb-ac79-4c7a-b0fb-df74b8df3283", "DragonbornJaw" },
+                    { "700f2c4d-aa36-4f0a-9afc-f05939841739", "DragonbornChin" },
+                    { "3aad9f7f-557e-4ea0-88ed-41fcd38f3c8a", "Hair" },
+                    { "ef7ec058-5dcc-4857-b9dc-8f15ba5ced15", "Beard+Remap" },
+                }
+                for i, pr in ipairs(probes) do
+                    AllBellies[pr[1]] = true
+                    SP_DelayCallTicks(8 + i * 3, function ()
+                        _P("[SP] belly probe " .. pr[2] .. " applied: " .. pr[1])
+                        Osi.AddCustomVisualOverride(pred, pr[1])
+                    end)
+                end
+                AllBellies["06d99409-955b-474b-91ed-6fb8a69e3d3d"] = true
+                SP_DelayCallTicks(30, function ()
+                    _P("[SP] belly probe VanillaBeard applied")
+                    Osi.AddCustomVisualOverride(pred, "06d99409-955b-474b-91ed-6fb8a69e3d3d")
+                end)
+            end
         end)
     end
 end

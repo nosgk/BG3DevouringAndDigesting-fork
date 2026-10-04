@@ -1,3 +1,17 @@
+Belly spawn diagnostics shipped (temporary): the re-rigged Dragonborn bellies still do not
+	render on a Muscular Bodytype 3/4 character even though (a) the installed pak's belly GR2s are
+	byte-identical to the re-rigged ones, (b) the Muscular mod's own skeleton DGB_MS_Base_AH_1 is
+	rest-transform-identical to vanilla DGB_M_Base (120/120 joints, zero delta - it only replaces
+	the mesh), so skinning cannot be the blocker. The failing layer is assumed to be visual
+	spawning (the CC slot chain), so one swallow now applies the same belly visual through five
+	alternative chains and a control, staggered over ~30 ticks:
+	  DragonbornTop / DragonbornJaw / DragonbornChin / Hair slot variants (same Belly_40 mesh),
+	  a Beard-slot NeedsSkeletonRemap=True bank variant, and a vanilla beard visual as control.
+	Watch the character right after swallowing: whichever chain spawns shows a large belly; the
+	log prints each probe as [SP] belly probe <slot> applied. The Beard+Remap probe entry in
+	DGB_M_NKD_Body_A_Mesh.lsf.lsx also restores the Belly_40 entry that the previous bank repair
+	had dropped (high-volume Dragonborn bellies referenced a visual that no longer existed).
+
 ROOT CAUSE of the active Swallow spell never registering (found after the Osi.AddSpell sync also
 failed silently): the engine resolves/compiles a Target spell's TargetConditions and SpellRoll when
 the spell is registered into a character's spellbook - through BOTH grant paths (passive
