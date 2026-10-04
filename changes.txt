@@ -35,6 +35,26 @@ stay in place as a second path; the Khonsu probe spells from the previous round 
 via the Potion of Debug Spells to determine whether the mod's .khn condition functions load (that
 decides whether the spell, once visible, can actually target and roll).
 
+r13 - the bisect results from the r12 log pinpoint the blocker: SP_Test_A_Minimal, B_Roll and
+C_ContainerRoll (mod Target spell, SpellRoll "Attack(...)", container + children + SpellRoll
+"SkillCheck(...)") ALL registered into the spellbook, while SP_Target_Swallow_O with its
+inlined conditions still did not. The only remaining structural difference: the Swallow
+conditions referenced CanShoveWeight() - a helper defined in the GAME's Khonsu file
+(CommonConditions.khn), not an engine builtin. Conclusion: mod spell conditions compile against
+ENGINE BUILTINS ONLY - game-khn helpers are as unavailable as mod-khn ones (which are not loaded
+at all). This explains every round: SP_CanVore/SwallowCheck (mod khn) failed, the inlined
+replacements still contained CanShoveWeight() and failed, while the pure-builtin test spells
+registered.
+
+- CanShoveWeight() is inlined in all Swallow TargetConditions/CycleConditions as
+  (context.Source.Strength * (ENLARGE ? 28.2 : REDUCE ? 5.1 : 12) >= GetLiftingWeight/1000) using
+  only engine builtins (GetLiftingWeight/Grounded/IsMovable are not khn-defined). IsSpell flag
+  added to the Swallow containers and Endo/Lethal bases to match the working game containers.
+- SP_Test_D_KhnRef (minimal spell whose only special is TargetConditions "CanShoveWeight()")
+  temporarily unlocked by SP_IsPred: if D fails to register while A/B/C succeed, the
+  engine-builtins-only theory is proven; if D registers, the blocker is elsewhere and the next
+  bisect target is the Swallow children/inheritance. Build tag bumped to r13.
+
 r12 - Swallow spell reshaped after the inlined conditions ALSO failed to register (log of the
 bf419c6 build): the decisive comparison is SP_Target_OfferMe - a Target CONTAINER granted by the
 same passive UnlockSpell mechanism - which DOES appear, and it has NO SpellRoll field. Every spell

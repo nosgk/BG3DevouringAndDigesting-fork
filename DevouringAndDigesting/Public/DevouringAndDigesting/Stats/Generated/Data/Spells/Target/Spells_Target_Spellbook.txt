@@ -716,3 +716,13 @@ new entry "SP_Test_C_Child2"
 type "SpellData"
 using "SP_Test_A_Minimal"
 data "SpellContainerID" "SP_Test_C_ContainerRoll"
+
+// r13 theory checker: game-khn helper (CanShoveWeight) inside a mod spell's
+// TargetConditions. If this spell fails to register while SP_Test_A/B/C succeed,
+// mod spell conditions resolve against ENGINE BUILTINS ONLY (no game khn helpers,
+// no mod khn) - which is why every Swallow definition containing CanShoveWeight()
+// was silently dropped.
+new entry "SP_Test_D_KhnRef"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "TargetConditions" "CanShoveWeight()"
