@@ -674,3 +674,45 @@ data "Icon" "PassiveFeature_ExpertDivination"
 data "CastTextEvent" "Cast"
 data "UseCosts" "ActionPoint:1"
 data "SpellFlags" "IsSpell;IsMelee"
+
+// r12 spellbook-registration bisect (temporary). SP_IsPred unlocks A/B/C so ANY
+// oral-potion test dumps them next to the real Swallow container:
+//   A missing            -> even a minimal mod Target spell fails to register (pak/fundamental)
+//   B missing (A ok)     -> SpellRoll presence alone blocks registration for mod spells
+//   C missing (A ok)     -> container shape + roll combination blocks registration
+//   all present          -> registration is fine; the old Swallow blocker was its SpellRoll,
+//                           which is now removed (roll moved into SP_TrySwallow_* statuses)
+new entry "SP_Test_A_Minimal"
+type "SpellData"
+data "SpellType" "Target"
+data "TargetRadius" "1.5"
+data "TargetConditions" "not Self() and not Dead()"
+data "SpellSuccess" "ApplyStatus(SP_Tasty,100,2)"
+data "DisplayName" "he02600d0g524fg4be2gb43eg93622af33b63;1"
+data "Icon" "PassiveFeature_ExpertDivination"
+data "CastTextEvent" "Cast"
+data "UseCosts" "ActionPoint:1"
+data "SpellFlags" "IsSpell;IsMelee"
+
+new entry "SP_Test_B_Roll"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "SpellRoll" "Attack(AttackType.MeleeSpellAttack)"
+data "TooltipAttackSave" "MeleeSpellAttack"
+
+new entry "SP_Test_C_ContainerRoll"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "SpellRoll" "SkillCheck(Skill.Athletics, 10)"
+data "SpellFlags" "IsSpell;IsMelee;IsLinkedSpellContainer"
+data "ContainerSpells" "SP_Test_C_Child1;SP_Test_C_Child2"
+
+new entry "SP_Test_C_Child1"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "SpellContainerID" "SP_Test_C_ContainerRoll"
+
+new entry "SP_Test_C_Child2"
+type "SpellData"
+using "SP_Test_A_Minimal"
+data "SpellContainerID" "SP_Test_C_ContainerRoll"

@@ -35,6 +35,27 @@ stay in place as a second path; the Khonsu probe spells from the previous round 
 via the Potion of Debug Spells to determine whether the mod's .khn condition functions load (that
 decides whether the spell, once visible, can actually target and roll).
 
+r12 - Swallow spell reshaped after the inlined conditions ALSO failed to register (log of the
+bf419c6 build): the decisive comparison is SP_Target_OfferMe - a Target CONTAINER granted by the
+same passive UnlockSpell mechanism - which DOES appear, and it has NO SpellRoll field. Every spell
+the player can see (OfferMe, all zones, AssignNPCRole) lacks SpellRoll; every invisible one had it,
+even with game-shipped-thoth-only inline expressions. Conclusion: the SpellRoll field itself (not
+its content) blocks spellbook registration for this mod's spells in this environment.
+
+- The Swallow spells are now OfferMe-shaped: no SpellRoll, SpellFail removed; SpellSuccess applies
+  an SP_TrySwallow_* status (Endo/Lethal x O/A/U/C - six new statuses added, the A/U/C ones were
+  missing entirely and broke the AI/zone path for non-oral loci). The TrySwallow status carries the
+  inlined OnApplyRoll (compiles at status-apply time, not at spellbook registration) and its
+  OnApplySuccess now also applies the AI helper statuses that used to live in the spell functors.
+- TargetConditions simplified to engine functions only (table literals removed - HasAnyStatus list
+  replaced by four HasStatus calls on context.Source, preserving the "caster already swallowed"
+  guard). The base SpellSuccess dead reference to nonexistent status SP_Swallow_Lethal_O is gone.
+- Registration bisect test spells SP_Test_A_Minimal / SP_Test_B_Roll / SP_Test_C_ContainerRoll are
+  temporarily unlocked by SP_IsPred, so any oral-potion test dumps them next to the real Swallow:
+  A missing = even a minimal mod Target spell fails; B missing = SpellRoll alone blocks
+  registration; C missing = container+roll blocks it; all present = the SpellRoll removal above was
+  the fix. Session log now also prints a build tag ("[SP] build: r12 ...") for unambiguous logs.
+
 Khonsu diagnostic round: field logs with the fixed spellbook reader showed the passive UnlockSpell
 boosts DO work (all 16 zone spells from SP_IsPred appear in the spellbook, including Regurgitate
 children whose RequirementConditions reference SP_IsActivePred), but the three
